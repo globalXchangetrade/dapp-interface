@@ -1,0 +1,33 @@
+{
+  "backgroundColor": "#111216",
+  "backgroundActive": "#161B30",
+  "backgroundLightDark": "#262D47",
+  "backgroundBlue": "#1D67E1",
+  "backgroundDark": "#00000040",
+  "backgroundLightGray": "#40475d3d",
+
+  "iconDark": "#40475D",
+  "iconGray": "#929292",
+
+  "textPrimary": "#FFFFFF",
+  "green": "#5CD25D",
+  "red": "#B70000",
+  "white": "#FFFFFF",
+  "blue": "#223663",
+  "darkBlue": "#2489E4",
+  "gray": "#C4C4C4",
+  "yellow": "#FCCF31",
+  "purple": "#6078EA",
+  "success": "#01E075",
+  "fail": "#F55555",
+  "warning": "#f44336",
+  "labelColor": "#636C93",
+  "lightDark": "#6B749A",
+  "inactive": "#595F74",
+
+  "backgroundDarkCard": "#ffffff08",
+  "backgroundLightCard": "#ffffff12",
+  "backgroundInput": "#ffffff0a",
+
+  "borderColor": "#323950"
+}
