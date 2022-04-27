@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, IconButton } from '../../shared'
 import { Clock, Eye } from '../../shared/SvgIcons'
 import { CircleProgressBar } from '../CircleProgressBar'
+import ReactApexChart from 'react-apexcharts'
 import {
   Container,
   InnerContainer,
@@ -17,6 +18,7 @@ import {
   Available,
   ButtonWrapper
 } from './styles'
+import { ChartItem } from '../ChartItem'
 
 interface UpcomingCardProps {
   card?: any,
@@ -25,6 +27,18 @@ interface UpcomingCardProps {
 
 export const UpcomingCard:React.FC<UpcomingCardProps> = (props: UpcomingCardProps) => {
   const { card } = props
+
+  const [series, setSeries] = useState<Array<any>>([])
+
+  useEffect(() => {
+    const _series = []
+    const obj = {
+      name: card?.title,
+      data: card?.data
+    }
+    _series.push(obj)
+    setSeries(_series)
+  }, [card])
 
   return (
     <Container>
@@ -44,7 +58,7 @@ export const UpcomingCard:React.FC<UpcomingCardProps> = (props: UpcomingCardProp
         </HeaderWrapper>
         <Content>
           <ChartWrapper>
-
+            {series?.length > 0 && <ChartItem color={card?.available_percent > 0 ? '#5CD25D' : '#F11818'} series={series} />}
           </ChartWrapper>
           <CardInfoWrapper>
             <DetailWrapper>

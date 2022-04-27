@@ -40,7 +40,7 @@ export const MenuListWrapper = styled.div`
 `
 
 export const DateListWrapper = styled(MenuListWrapper)`
-
+  overflow: auto;
 `
 
 interface MenuItemProps {
@@ -66,17 +66,35 @@ export const MenuItem = styled.div<MenuItemProps>`
 
 export const ContentWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `
 
 export const ChartWrapper = styled.div`
   flex: 1;
-  margin: 0px 7px;
+  margin: 0px;
+
+  @media (min-width: 768px) {
+    margin: 0px 7px;
+  }
 `
 
 export const ControlPanel = styled.div`
   width: 100%;
-  max-width: 200px;
   margin: 0px 7px;
+  padding: 15px;
+
+  @media (min-width: 400px) {
+    padding: 30px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 200px;
+    padding: 0px;
+  }
 `
 
 export const PriceWrapper = styled.div`
@@ -103,7 +121,7 @@ export const PriceWrapper = styled.div`
 
 export const Table = styled.table`
   width: 100%;
-  margin-bottom: 35px 0px;
+  margin: 35px 0px;
 `
 
 export const Tbody = styled.tbody`
@@ -190,9 +208,19 @@ export const GoldWrapper = styled.div`
 export const Option = styled.div`
   display: flex;
   align-items: center;
+  img {
+    width: 17px;
+    margin-right: 7px;
+  }
+  span {
+    font-weight: 500;
+    font-size: 11px;
+  }
 `
 
 export const Balance = styled.p`
   font-size: 12px;
   text-align: right;
 `
+
+export const ChartView = styled.div``

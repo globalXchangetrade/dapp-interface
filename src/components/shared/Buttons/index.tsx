@@ -9,7 +9,7 @@ export const IconButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all .2s ease-in;
+  transition: all .3s linear;
   cursor: pointer;
   border: none;
 
@@ -24,11 +24,11 @@ export const IconButton = styled.button`
   }
 
   &:hover {
-    background-position: right center; /* change the direction of the change here */
-    text-decoration: none;
+    background: #062642;
   }
 
   &:active {
+    background: #062642;
   }
 
   ${(props: any) => props.naked && css`

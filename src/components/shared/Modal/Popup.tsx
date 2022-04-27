@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes, { string } from 'prop-types'
 import ReactDOM from 'react-dom'
 

@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, IconButton, Modal } from '../../shared'
 import { Eye } from '../../shared/SvgIcons'
 import { CardDetail } from '../CardDetail'
+import { ChartItem } from '../ChartItem'
 import {
   Container,
   InnerContainer,
@@ -25,6 +26,17 @@ export const Card:React.FC<CardProps> = (props: CardProps) => {
   const { card } = props
 
   const [open, setIsOpen] = useState<boolean>(false)
+  const [series, setSeries] = useState<Array<any>>([])
+
+  useEffect(() => {
+    const _series = []
+    const obj = {
+      name: card?.title,
+      data: card?.data
+    }
+    _series.push(obj)
+    setSeries(_series)
+  }, [card])
 
   const checkColor = (percent: number) => {
     if (percent > 0) return '#5CD25D'
@@ -44,7 +56,7 @@ export const Card:React.FC<CardProps> = (props: CardProps) => {
           </HeaderWrapper>
           <Content>
             <ChartWrapper>
-
+              {series?.length > 0 && <ChartItem color={card?.change > 0 ? '#5CD25D' : '#F11818'} series={series} />}
             </ChartWrapper>
             <CardInfoWrapper>
               <DetailWrapper>

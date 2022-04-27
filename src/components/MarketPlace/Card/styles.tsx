@@ -1,10 +1,14 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  padding: 15px;
+  margin: 15px 0px;
+
+  @media (min-width: 576px) {
+    margin: 15px;
+  }
 
   @media (min-width: 768px) {
-    padding: 15px 30px;
+    margin: 15px 30px;
   }
 `
 
@@ -58,10 +62,20 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   height: calc(100% - 30px);
+  flex-direction: row;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
 `
 
 export const ChartWrapper = styled.div`
-  width: 130px;
+  width: 150px;
+  margin-right: 15px;
 `
 
 export const CardInfoWrapper = styled.div`

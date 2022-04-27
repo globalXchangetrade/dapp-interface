@@ -19,8 +19,10 @@ import {
   InputWrapper,
   GoldWrapper,
   Option,
-  Balance
+  Balance,
+  ChartView
 } from './styles'
+import { DetailChart } from '../DetailChart';
 
 interface CardDetailProps {
   card: any;
@@ -56,7 +58,7 @@ export const CardDetail:React.FC<CardDetailProps> = (props: CardDetailProps) => 
   ]
 
   const tokenOptions = [
-    { value: 'ethereum', content: <Option><img src='/imgs/gold.png' alt='' /><span className='token'>DAI</span></Option> },
+    { value: 'dai', content: <Option><img src='/imgs/gold.png' alt='' /><span className='token'>DAI</span></Option> },
     { value: 'bitcoin', content: <Option><img src='/imgs/gold.png' alt='' /><span className='token'>Bitcoin</span></Option> }
   ]
 
@@ -97,6 +99,9 @@ export const CardDetail:React.FC<CardDetailProps> = (props: CardDetailProps) => 
               ))}
             </DateListWrapper>
           </FilterWrapper>
+          <ChartView>
+            <DetailChart />
+          </ChartView>
         </ChartWrapper>
         <ControlPanel>
           <PriceWrapper>

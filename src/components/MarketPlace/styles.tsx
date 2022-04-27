@@ -20,7 +20,15 @@ export const FilterWrapper = styled.div`
 
   > div {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  @media (min-width: 576px) {
+    > div {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 `
 
@@ -34,7 +42,7 @@ export const SearchWrapper = styled.div`
 `
 
 export const SelectWrapper = styled.div`
-  margin-left: 22px;
+  margin-left: 0px;
   display: flex;
   align-items: center;
   padding: 3px 0px 3px 13px;
@@ -57,11 +65,16 @@ export const SelectWrapper = styled.div`
       }
     }
   }
+
+  @media (min-width: 576px) {
+    margin-left: 22px;
+  }
 `
 
 export const CurrencyFilterWrapper = styled.div`
   display: flex;
   align-items: center;
+  margin-top: 15px;
 
   > button {
     margin-left: 6px;
@@ -72,6 +85,10 @@ export const CurrencyFilterWrapper = styled.div`
     > svg {
       font-size: 20px;
     }
+  }
+
+  @media (min-width: 576px) {
+    margin-top: 0px;
   }
 `
 
@@ -91,19 +108,30 @@ export const CardListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-top: 15px;
+  width: 100%;
   > div {
     width: 100%;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 576px) {
+    margin-left: -15px;
+    width: calc(100% + 30px);
     > div {
-      width: 50%;
+      width: calc(50% - 30px);
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin-left: -30px;
+    width: calc(100% + 60px);
+    > div {
+      width: calc(50% - 60px);
     }
   }
 
   @media (min-width: 993px) {
     > div {
-      width: 33.33%;
+      width: calc(33.33% - 60px);
     }
   }
 `
