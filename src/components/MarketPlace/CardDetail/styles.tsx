@@ -34,9 +34,9 @@ export const FilterWrapper = styled.div`
 export const MenuListWrapper = styled.div`
   display: flex;
   align-items: center;
-  background: linear-gradient(458deg, #48a3f60a 9.22%, #1780e00a 83.63%);
-  padding: 4px 17px;
-  border-radius: 15px;
+  background: rgba(38, 39, 43, 0.73);
+  border-radius: 13px;
+  padding: 4px 10px;
 `
 
 export const DateListWrapper = styled(MenuListWrapper)`
@@ -48,7 +48,7 @@ interface MenuItemProps {
 };
 
 export const MenuItem = styled.div<MenuItemProps>`
-  border-radius: 28.9062px;
+  border-radius: 10px;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
@@ -102,17 +102,13 @@ export const PriceWrapper = styled.div`
   align-items: center;
   justify-content: center;
   span {
-    margin-right: 5px;
+    margin-right: 7px;
     font-weight: 700;
-    font-size: 24px;
-    background: linear-gradient(87.2deg, #1D85E3 2.97%, #FFFFFF 157.67%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+    font-size: 28px;
   }
 
   #select-input {
+    background: linear-gradient(458deg,rgb(72 163 246 / 10%) 9.22%,rgb(23 128 224 / 10%) 83.63%);
     > div:first-child {
       padding: 5px 12px;
     }
@@ -140,18 +136,16 @@ export const Tbody = styled.tbody`
 `
 
 export const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
 
   button {
-    height: 25px;
+    height: 43px;
     padding: 0px 9px;
-    font-size: 11px;
+    width: 100%;
   }
 `
 
 export const FormControl = styled.div`
-  margin-top: 6px;
+  margin-top: 10px;
   > span {
     font-weight: 400;
     font-size: 10px;
@@ -162,12 +156,13 @@ export const InputWrapper = styled.div`
   align-items: center;
   background: rgb(255 255 255 / 4%);
   width: 100%;
-  border-radius: 22px;
+  border-radius: 11px;
   margin-top: 5px;
+  height: 35px;
 
   input {
     flex: 1;
-    border-radius: 17px;
+    border-radius: 11px;
     min-width: 10px;
     border: none;
     background: transparent;

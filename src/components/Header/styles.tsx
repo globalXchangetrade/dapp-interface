@@ -41,9 +41,9 @@ export const MenuButtonWrapper = styled.div`
 export const MenuListWrapper = styled.div`
   display: flex;
   align-items: center;
-  background: linear-gradient(458deg, #48a3f60a 9.22%, #1780e00a 83.63%);
+  background: #26272B;
+  border-radius: 15px;
   padding: 4px 12px;
-  border-radius: 19px;
 
   @media (min-width: 1024px) {
     padding: 4px 17px;
@@ -60,7 +60,7 @@ interface MenuItemProps {
 };
 
 export const MenuItem = styled.div<MenuItemProps>`
-  border-radius: 28.9062px;
+  border-radius: 12px;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
@@ -72,7 +72,7 @@ export const MenuItem = styled.div<MenuItemProps>`
   background: transparent;
   
   ${(props: any) => props?.active && css`
-    background: linear-gradient(442.07deg, #223663 -1.47%, #2489E4 98.47%);
+    background: linear-gradient(440.31deg, #2B2263 7.82%, #6D24E4 91.92%);
   `}
 
   @media (min-width: 1024px) {
@@ -89,6 +89,9 @@ export const ChainListWrapper = styled.div`
 
   @media (min-width: 993px) {
     margin: 0px 20px;
+    #select-input {
+      background: transparent;
+    }
   }
 
   @media (min-width: 1200px) {
@@ -122,43 +125,6 @@ export const WalletButtonWrapper = styled.div`
 
   > button {
     height: 38px;
-  }
-`
-
-export const ActionSelectorWrapper = styled.div`
-  position: relative;
-  margin-left: 8px;
-
-  > button {
-    height: 38px;
-    padding: 7px 5px;
-    border-radius: 9px;
-    svg {
-      font-size: 20px;
-    }
-  }
-
-  @media (min-width: 993px) {
-    margin-left: 12px;
-  }
-`
-
-export const DropDownList = styled.div`
-  position: absolute;
-  min-width: 120px;
-  right: 0px;
-  top: 100%;
-  margin-top: 10px;
-  border-radius: 8px;
-  background: linear-gradient(458deg,rgb(72 163 246 / 10%) 9.22%,rgb(23 128 224 / 10%) 83.63%);
-`
-
-export const DropDownItem = styled.div`
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 14px;
-  &:hover {
-    background-color: #ffffff08;
   }
 `
 

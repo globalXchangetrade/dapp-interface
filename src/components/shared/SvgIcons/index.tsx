@@ -34,19 +34,8 @@ const Filter:React.FC = () => {
 
 const Clock:React.FC = () => {
   return (
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10.6641 19.1788C15.0133 19.1788 18.5391 15.6531 18.5391 11.3038C18.5391 6.95459 15.0133 3.42883 10.6641 3.42883C6.31482 3.42883 2.78906 6.95459 2.78906 11.3038C2.78906 15.6531 6.31482 19.1788 10.6641 19.1788Z" stroke="url(#paint0_linear_104_254)" strokeWidth="1.61538" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M10.6641 6.92883V11.3038H15.0391" stroke="url(#paint1_linear_104_254)" strokeWidth="1.07692" strokeLinecap="round" strokeLinejoin="round"/>
-      <defs>
-      <linearGradient id="paint0_linear_104_254" x1="18.5391" y1="4.47883" x2="1.68946" y2="5.17914" gradientUnits="userSpaceOnUse">
-      <stop stopColor="#82BCEF"/>
-      <stop offset="1" stopColor="#1780E0"/>
-      </linearGradient>
-      <linearGradient id="paint1_linear_104_254" x1="15.0391" y1="7.2205" x2="10.3586" y2="7.41503" gradientUnits="userSpaceOnUse">
-      <stop stopColor="#82BCEF"/>
-      <stop offset="1" stopColor="#1780E0"/>
-      </linearGradient>
-      </defs>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 0C3.58893 0 0 3.58893 0 8C0 12.4111 3.58893 16 8 16C12.4111 16 16 12.4111 16 8C16 3.58893 12.4111 0 8 0ZM8 1.20007C11.7629 1.20007 14.8 4.23746 14.8 8.00007C14.8 11.7629 11.7626 14.8001 8 14.8001C4.23714 14.8001 1.2 11.7627 1.2 8.00007C1.2 4.23757 4.23739 1.20007 8 1.20007ZM8 2.20007C7.66867 2.20007 7.39996 2.46876 7.39996 2.80011V8.00011C7.39996 8.33144 7.66866 8.60014 8 8.60014H12.8C13.1313 8.60014 13.4 8.33159 13.4 8.00011C13.4 7.66878 13.1313 7.40007 12.8 7.40007H8.6V2.80007C8.6 2.46874 8.33145 2.20004 7.99996 2.20004L8 2.20007Z" fill="white"/>
     </svg>
   )
 }
@@ -94,6 +83,17 @@ const List:React.FC = () => {
   )
 }
 
+const Expand:React.FC = () => {
+  return (
+    <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4.25391 9.24335L10.5537 2.94354" stroke="white" strokeWidth="1.1921" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M6.9541 2.94354H10.554V6.54343" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9.11133 4.46295L2.81152 10.7628" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M6.41113 10.7628L2.81125 10.7628L2.81125 7.16287" stroke="white" strokeWidth="1.1921" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}
+
 export {
   ThreeDots,
   DownArrow,
@@ -103,5 +103,6 @@ export {
   Eye,
   Close,
   Calendar,
-  List
+  List,
+  Expand
 }

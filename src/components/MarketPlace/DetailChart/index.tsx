@@ -9,10 +9,6 @@ export const DetailChart:React.FC = () => {
   const series = [{
     name: "Gold",
     data: [19, 45, 13, 51, 49, 62, 69]
-  },
-  {
-    name: "Virgin",
-    data: [10, 41, 35, 41, 49, 62, 99]
   }]
 
   const options: any = {
@@ -28,7 +24,7 @@ export const DetailChart:React.FC = () => {
     dataLabels: {
       enabled: false
     },
-    colors: ['#18E7D9', '#EDCD24'],
+    colors: ['#86C89A'],
     stroke: {
       curve: 'straight',
       width: 2
@@ -66,9 +62,22 @@ export const DetailChart:React.FC = () => {
       },
     },
     tooltip: {
-      x: {
-        format: 'dd/MM/yy HH:mm'
-      }
+      enabled: true,
+      custom: function({series, seriesIndex, dataPointIndex, w}: any) {
+        return `<div classname="custom-tooltip" style='padding: 10px;'>
+          <div>
+            <span>Price: </span>
+            <span>${series[seriesIndex][dataPointIndex]} USD</span>
+          </div>
+          <div>
+            <span>Date:</span>
+            <span>08 Mar 2022</span>
+          </div>
+        </div>`
+      },
+      style: {
+        fontSize: '12px'
+      },
     },
     legend: {
       show: false

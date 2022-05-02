@@ -14,9 +14,9 @@ export const SearchContainer = styled.div`
 
   input {
     flex: 1;
-    border-radius: 17px;
-    border: 1px solid #ffffff0a;
-    background: #ffffff0a;
+    border-radius: 12px;
+    border: 1px solid #1a1b1f;
+    background: #1a1b1f;
     color: white;
     outline: none;
     font-size: 12px;
@@ -27,7 +27,8 @@ export const SearchContainer = styled.div`
       border: 1px solid #141f2c;
     }
     &::placeholder {
-      color: #C4C4C4;
+      color: #FFFFFF;
+      opacity: 0.3;
     }
   }
 `

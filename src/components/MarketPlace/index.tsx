@@ -124,7 +124,7 @@ export const MarketPlace:React.FC = () => {
           <div>
             <SearchWrapper>
               <SearchBar
-                placeholder='E.G. Gold'
+                placeholder='Search Stocks and Metals'
                 onSearch={(val: string) => console.log(val)}
                 search=''
               />
@@ -135,7 +135,6 @@ export const MarketPlace:React.FC = () => {
             </SearchWrapper>
             <CurrencyFilterWrapper>
               <SelectWrapper>
-                <span>Base Currency</span>
                 <Select
                   notReload
                   placeholder='Select currency'
@@ -144,7 +143,7 @@ export const MarketPlace:React.FC = () => {
                   onChange={(val: string) => setCurrency(val)}
                 />
               </SelectWrapper>
-              <IconButton>
+              <IconButton borderRadius='10px'>
                 <Filter />
               </IconButton>
             </CurrencyFilterWrapper>

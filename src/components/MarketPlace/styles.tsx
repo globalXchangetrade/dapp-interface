@@ -45,17 +45,9 @@ export const SelectWrapper = styled.div`
   margin-left: 0px;
   display: flex;
   align-items: center;
-  padding: 3px 0px 3px 13px;
-  border-radius: 17.5px;
-  background: linear-gradient(458deg,rgb(72 163 246 / 10%) 9.22%,rgb(23 128 224 / 10%) 83.63%);
-  height: 35px;
-  > span {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 11px;
-    color: #FFFFFF;
-    opacity: 0.3;
-  }
+  border-radius: 10px;
+  height: 39px;
+  background: #26272B;
   #select-input {
     background: transparent !important;
     #list {
@@ -78,10 +70,9 @@ export const CurrencyFilterWrapper = styled.div`
 
   > button {
     margin-left: 6px;
-    border-radius: 50%;
     padding: 0px;
     width: 40px;
-    height: 40px;
+    height: 39px;
     > svg {
       font-size: 20px;
     }

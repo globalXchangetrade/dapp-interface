@@ -74,7 +74,19 @@ export const ChartItem:React.FC<ChartItemProps> = (props: ChartItemProps) => {
     },
     colors: [color],
     tooltip: {
-      enabled: true
+      enabled: true,
+      custom: function({series, seriesIndex, dataPointIndex, w}: any) {
+        return `<div classname="custom-tooltip" style='padding: 10px;font-size: 12px'>
+          <div>
+            <span>Price: </span>
+            <span>${series[seriesIndex][dataPointIndex]} USD</span>
+          </div>
+          <div>
+            <span>Date:</span>
+            <span>08 Mar 2022</span>
+          </div>
+        </div>`
+      }
     },
     grid: {
       show: false,

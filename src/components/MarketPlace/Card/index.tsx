@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Button, IconButton, Modal } from '../../shared'
-import { Eye } from '../../shared/SvgIcons'
+import { Eye, Expand } from '../../shared/SvgIcons'
 import { CardDetail } from '../CardDetail'
 import { ChartItem } from '../ChartItem'
 import {
@@ -14,7 +14,8 @@ import {
   DetailWrapper,
   ButtonWrapper,
   Table,
-  Tbody
+  Tbody,
+  Divider
 } from './styles'
 
 interface CardProps {
@@ -52,11 +53,22 @@ export const Card:React.FC<CardProps> = (props: CardProps) => {
               <img src={card?.logo} alt='' />
               <h2>{card?.title}</h2>
             </TitleWrapper>
-            <span>{card?.price} {card?.currency}</span>
+            <span>{card?.price} <span>{card?.currency}</span></span>
           </HeaderWrapper>
+          <Divider />
           <Content>
             <ChartWrapper>
-              {series?.length > 0 && <ChartItem color={card?.change > 0 ? '#5CD25D' : '#F11818'} series={series} />}
+              {series?.length > 0 && (
+                <>
+                  <IconButton
+                    borderRadius='50%'
+                    onClick={() => setIsOpen(true)}
+                  >
+                    <Expand />
+                  </IconButton>
+                  <ChartItem color={card?.change > 0 ? '#5CD25D' : '#F11818'} series={series} />
+                </>
+              )}
             </ChartWrapper>
             <CardInfoWrapper>
               <DetailWrapper>
@@ -112,10 +124,11 @@ export const Card:React.FC<CardProps> = (props: CardProps) => {
               <ButtonWrapper>
                 <Button
                   color='primary'
-                  borderRadius='28px'
-                  onClick={() => setIsOpen(true)}
-                >Buy In</Button>
-                <IconButton>
+                  borderRadius='11px'
+                >Invest</Button>
+                <IconButton
+                  borderRadius='12px'
+                >
                   <Eye />
                 </IconButton>
               </ButtonWrapper>

@@ -97,9 +97,9 @@ interface SelectProps {
 
 export const Select = styled.div<SelectProps>`
   display: inline-block;
-  border-radius: 19px;
-  background: linear-gradient(458deg, #46a1f61a 9.22%, #1780e01a 83.63%);
-  color: #C4C4C4;
+  border-radius: 10px;
+  background: #26272B;
+  color: #FFFFFF;
   position: relative;
   
   ${props => props.disabled && css`

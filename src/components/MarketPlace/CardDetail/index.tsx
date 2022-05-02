@@ -191,7 +191,7 @@ export const CardDetail:React.FC<CardDetailProps> = (props: CardDetailProps) => 
           <ButtonWrapper>
             <Button
               color='primary'
-              borderRadius='28px'
+              borderRadius='11px'
             >Buy now</Button>
           </ButtonWrapper>
         </ControlPanel>

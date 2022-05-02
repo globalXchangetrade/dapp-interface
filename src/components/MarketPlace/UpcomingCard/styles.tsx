@@ -13,12 +13,12 @@ export const Container = styled.div`
 `
 
 export const InnerContainer = styled.div`
-  background-color: #ffffff08;
+  background-color: rgba(200, 200, 200, 0.07);
   border-radius: 23px;
-  padding: 15px;
+  padding: 10px 15px;
 
   @media (min-width: 768px) {
-    padding: 25px;
+    padding: 16px 25px;
   }
 `
 
@@ -26,32 +26,32 @@ export const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 12px;
 `
 
 export const TitleWrapper = styled.div`
   display: flex;
   align-items: center;
 
+  > img {
+    width: 30px;
+  }
+
   > div {
-    margin-left: 12px;
+    margin-left: 5px;
     h2, p {
       margin: 0px;
+      text-transform: uppercase;
     }
     h2 {
-      font-weight: 400;
-      font-size: 16px;
+      font-weight: 700;
+      font-size: 14px;
       line-height: 18px;
-      text-transform: uppercase;
     }
     p {
+      color: #E0E0E0;
       font-weight: 500;
       font-size: 12px;
-      text-transform: uppercase;
-      background: linear-gradient(267.62deg, #82BCEF 0.27%, #1780E0 103.16%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
     }
   }
 `
@@ -61,8 +61,8 @@ export const TimeWrapper = styled.div`
   align-items: center;
 
   span {
-    margin-left: 13px;
-    font-weight: 400;
+    margin-left: 10px;
+    font-weight: 700;
     font-size: 16px;
   }
 `
@@ -71,6 +71,7 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
+  padding-top: 10px;
 
   @media (min-width: 768px) {
     flex-direction: column;
@@ -84,6 +85,21 @@ export const Content = styled.div`
 export const ChartWrapper = styled.div`
   width: 150px;
   margin-right: 15px;
+  position: relative;
+  padding: 15px 0px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  > button {
+    z-index: 999;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 25px;
+    height: 25px;
+    padding: 0px;
+  }
 
   @media (min-width: 993px) {
     width: 120px;
@@ -106,11 +122,11 @@ export const DetailWrapper = styled.div`
 
 export const TotalSupply = styled.div`
   .title {
-    color: rgb(255 255 255 / 40%);
+    color: rgba(197, 197, 198, 0.4);
     font-size: 12px;
     font-weight: 400;
     margin-top: 0px;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
   }
   .value {
     font-weight: 400;
@@ -122,17 +138,17 @@ export const TotalSupply = styled.div`
 
 export const Country = styled.div`
   p {
-    color: rgb(255 255 255 / 40%);
+    color: rgba(197, 197, 198, 0.4);
     font-size: 12px;
     font-weight: 400;
     margin-top: 0px;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
   }
 `
 
 export const Available = styled.div`
   p {
-    color: rgb(255 255 255 / 40%);
+    color: rgba(197, 197, 198, 0.4);
     font-size: 12px;
     font-weight: 400;
     margin-top: 0px;
@@ -157,17 +173,29 @@ export const ButtonWrapper = styled.div`
   padding-top: 14px;
 
   button {
-    height: 30px;
-    margin-top: 10;
+    height: 37px;
+    margin-top: 10px;
     &:first-child {
       padding: 5px 17px;
-      margin-right: 10px;
+      margin-right: 6px;
+      max-width: 147px;
+      width: calc(100% - 44px);
     }
     &:last-child {
-      border-radius: 50%;
-      width: 30px;
+      width: 38px;
       padding: 5px;
-      background-color: rgb(247 247 247 / 4%);
     }
+  }
+`
+
+export const Divider = styled.div`
+  margin-left: -15px;
+  width: calc(100% + 30px);
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.06);
+
+  @media (min-width: 768px) {
+    margin-left: -25px;
+    width: calc(100% + 50px);
   }
 `

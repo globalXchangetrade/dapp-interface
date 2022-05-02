@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button, IconButton } from '../../shared'
-import { Clock, Eye } from '../../shared/SvgIcons'
+import { Clock, Eye, Expand } from '../../shared/SvgIcons'
 import { CircleProgressBar } from '../CircleProgressBar'
-import ReactApexChart from 'react-apexcharts'
 import {
   Container,
   InnerContainer,
@@ -16,7 +15,8 @@ import {
   TotalSupply,
   Country,
   Available,
-  ButtonWrapper
+  ButtonWrapper,
+  Divider
 } from './styles'
 import { ChartItem } from '../ChartItem'
 
@@ -56,9 +56,19 @@ export const UpcomingCard:React.FC<UpcomingCardProps> = (props: UpcomingCardProp
             <span>{card?.time}</span>
           </TimeWrapper>
         </HeaderWrapper>
+        <Divider />
         <Content>
           <ChartWrapper>
-            {series?.length > 0 && <ChartItem color={card?.available_percent > 0 ? '#5CD25D' : '#F11818'} series={series} />}
+            {series?.length > 0 && (
+              <>
+                <IconButton
+                  borderRadius='50%'
+                >
+                  <Expand />
+                </IconButton>
+                <ChartItem color={card?.available_percent > 0 ? '#5CD25D' : '#F11818'} series={series} />
+              </>
+            )}
           </ChartWrapper>
           <CardInfoWrapper>
             <DetailWrapper>
@@ -84,9 +94,11 @@ export const UpcomingCard:React.FC<UpcomingCardProps> = (props: UpcomingCardProp
             <ButtonWrapper>
               <Button
                 color='primary'
-                borderRadius='28px'
+                borderRadius='11px'
               >Prebook</Button>
-              <IconButton>
+              <IconButton
+                borderRadius='12px'
+              >
                 <Eye />
               </IconButton>
             </ButtonWrapper>

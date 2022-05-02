@@ -2,9 +2,13 @@
 import styled, { css } from 'styled-components'
 import { darken } from 'polished'
 
-export const IconButton = styled.button`
-  background: linear-gradient(458deg,rgb(72 163 246 / 10%) 9.22%,rgb(23 128 224 / 10%) 83.63%);
-  border-radius: 5px;
+interface IconButtonProps {
+  readonly borderRadius?: string;
+};
+
+export const IconButton = styled.button<IconButtonProps>`
+  background: rgba(247, 247, 247, 0.11);
+  border-radius: ${(props: any) => !props.borderRadius ? '10px' : props.borderRadius};
   padding: 7px 12px;
   display: flex;
   align-items: center;
@@ -24,11 +28,11 @@ export const IconButton = styled.button`
   }
 
   &:hover {
-    background: #062642;
+    background: rgba(247, 247, 247, 0.08);
   }
 
   &:active {
-    background: #062642;
+    background: rgba(247, 247, 247, 0.06);
   }
 
   ${(props: any) => props.naked && css`
@@ -38,7 +42,7 @@ export const IconButton = styled.button`
   `}
 `
 interface ButtonProps {
-  readonly borderRadius: string;
+  readonly borderRadius?: string;
 };
 
 export const Button = styled.button<ButtonProps>`
@@ -121,7 +125,7 @@ export const Button = styled.button<ButtonProps>`
   ${({ color }) => color === 'primary' && css`
     display: flex;
     align-items: center;
-    background-image: linear-gradient(442.07deg, #223663 -1.47%, #2489E4 98.47%);
+    background-image: linear-gradient(440.31deg, #2B2263 7.82%, #6D24E4 91.92%);
     text-align: center;
     background-size: 200% auto;     
     display: block;
