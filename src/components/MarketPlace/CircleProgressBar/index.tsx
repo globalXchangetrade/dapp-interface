@@ -6,11 +6,13 @@ import {
 interface CircleProgressBarProps {
   sqSize: number,
   percentage: number,
-  strokeWidth: number
+  strokeWidth: number,
+  inactiveColor?: string;
+  activeColor?: string;
 }
 
 export const CircleProgressBar:React.FC<CircleProgressBarProps> = (props: CircleProgressBarProps) => {
-  const { sqSize, percentage,  strokeWidth} = props
+  const { sqSize, percentage,  strokeWidth, inactiveColor, activeColor} = props
 
   // SVG centers the stroke width on the radius, subtract out so circle fits in square
   const radius = (sqSize - strokeWidth) / 2;
@@ -21,7 +23,7 @@ export const CircleProgressBar:React.FC<CircleProgressBarProps> = (props: Circle
   // Scale 100% coverage overlay with the actual percent
   const dashOffset = dashArray - dashArray * percentage / 100;
   return (
-    <CircleProgressBarContainer>
+    <CircleProgressBarContainer activeColor={activeColor} inactiveColor={inactiveColor}>
       <svg
           width={sqSize}
           height={sqSize}

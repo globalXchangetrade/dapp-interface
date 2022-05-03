@@ -1,7 +1,11 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
+interface ContainerProps {
+  readonly activeColor?: string;
+  readonly inactiveColor?: string;
+};
 
-export const CircleProgressBarContainer = styled.div`
+export const CircleProgressBarContainer = styled.div<ContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,4 +23,15 @@ export const CircleProgressBarContainer = styled.div`
     stroke-linecap: round;
     stroke-linejoin: round;
   }
+
+  ${(props: any) => props?.activeColor && css`
+    .circle-progress {
+      stroke: ${props?.activeColor};
+    }
+  `}
+  ${(props: any) => props?.inactiveColor && css`
+    .circle-background {
+      stroke: ${props?.inactiveColor};
+    }
+  `}
 `
