@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CircleProgressBar } from '../MarketPlace/CircleProgressBar';
+import { SupplyMarket } from './SupplyMarket';
+import { BorrowMarket } from './BorrowMarket';
+import { Supplied } from './Supplied';
 import {
   Container,
   InnerContainer,
@@ -10,10 +13,17 @@ import {
   ProgressTextWrapper,
   RightPriceWrapper,
   LimitWrapper,
-  InfoItem
+  InfoItem,
+  ContentWrapper
 } from './styles';
 
 export const LendingBorrowing = () => {
+  const [isSupply, setIsSupply] = useState<boolean>(false)
+
+  const handleChangeSupply = (index: boolean) => {
+    setIsSupply(index)
+  }
+
   return (
     <Container>
       <InnerContainer>
@@ -52,6 +62,13 @@ export const LendingBorrowing = () => {
             </PriceBox>
           </RightPriceWrapper>
         </ProgressBox>
+        <ContentWrapper>
+          {isSupply && <Supplied />}
+          <SupplyMarket
+            handleChangeSupply={handleChangeSupply}
+          />
+          <BorrowMarket />
+        </ContentWrapper>
       </InnerContainer>
     </Container>
   )

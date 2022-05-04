@@ -43,6 +43,7 @@ export const IconButton = styled.button<IconButtonProps>`
 `
 interface ButtonProps {
   readonly borderRadius?: string;
+  readonly naked?: boolean;
 };
 
 export const Button = styled.button<ButtonProps>`
@@ -139,7 +140,21 @@ export const Button = styled.button<ButtonProps>`
       text-decoration: none;
     }
     ${(props: any) => props.naked && css`
-      background: transparent;
+      border: 2px solid #6D24E4;
+      background-image: none;
+      background-color: transparent;
+      &:hover {
+        border: 2px solid transparent;
+        background-position: right center; /* change the direction of the change here */
+        text-decoration: none;
+        background-image: linear-gradient(440.31deg, #2B2263 7.82%, #6D24E4 91.92%);
+      }
+      &:active {
+        border: 2px solid transparent;
+        background-position: right center; /* change the direction of the change here */
+        text-decoration: none;
+        background-image: linear-gradient(440.31deg, #2B2263 7.82%, #6D24E4 91.92%);
+      }
     `}
   `}
 `

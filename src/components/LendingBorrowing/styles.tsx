@@ -21,6 +21,11 @@ export const ProgressBox = styled.div`
   border-radius: 27px;
   padding: 16px 30px;
   background: linear-gradient(440.31deg, #2B2263 7.82%, #6D24E4 91.92%);
+  flex-direction: column;
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+  }
 `
 
 export const PriceBox = styled.div`
@@ -105,6 +110,25 @@ export const InfoItem = styled.div`
     &.value {
       font-weight: 600;
       font-size: 12px;
+    }
+  }
+`
+
+export const ContentWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: 0px;
+  > div {
+    width: 100%;
+  }
+
+  @media (min-width: 576px) {
+    margin-left: -15px;
+    width: calc(100% + 30px);
+    > div {
+      margin: 15px;
+      width: calc(50% - 30px);
     }
   }
 `

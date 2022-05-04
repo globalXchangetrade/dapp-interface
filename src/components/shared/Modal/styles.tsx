@@ -16,6 +16,7 @@ interface ModalDialogProps {
   readonly padding?: string;
   readonly height?: string;
   readonly width?: string;
+  readonly borderRadius?: string;
 };
 
 export const ModalDialog = styled.div<ModalDialogProps>`
@@ -34,7 +35,7 @@ export const ModalDialog = styled.div<ModalDialogProps>`
   @media (min-width: 769px) {
     width: ${({ width }) => width || '50%'};
     max-height: 90vh;
-    border-radius: 10px;
+    border-radius: ${(props: any) => !props.borderRadius ? '8px' : props.borderRadius};
     height: auto;
   }
 `
