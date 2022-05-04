@@ -6,7 +6,13 @@ import {
   Tbody
 } from './styles'
 
-export const Collateral:React.FC = () => {
+interface CollateralProps {
+  openBorrowRepay: any
+}
+
+export const Collateral:React.FC<CollateralProps> = (props: CollateralProps) => {
+  const { openBorrowRepay } = props
+
   return (
     <Container>
       <p>Enable GOLD token as collateral</p>
@@ -27,6 +33,7 @@ export const Collateral:React.FC = () => {
       </Table>
       <Button
         color='primary'
+        onClick={() => openBorrowRepay()}
       >
       USE GOLD AS COLLATERAL
       </Button>

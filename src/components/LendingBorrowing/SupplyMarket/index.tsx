@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal } from '../../shared';
+import { BorrowRepay } from '../BorrowRepay';
 import { Collateral } from '../Collateral';
 import { SupplyForm } from '../SupplyForm';
 import {
@@ -8,30 +9,38 @@ import {
   Table,
   Thead,
   Tbody,
-  AssetsWrapper
+  AssetsWrapper,
+  TableInnerWrapper
 } from './styles';
 
 interface SupplyMarketProps {
-  handleChangeSupply: any
-}
+  handleChangeSupply: any,
+  handleChangeBorrow: any
+};
 
 export const SupplyMarket:React.FC<SupplyMarketProps> = (props: SupplyMarketProps) => {
-  const { handleChangeSupply } = props
+  const { handleChangeSupply, handleChangeBorrow } = props;
 
   const dumy = [
     { photo: '/imgs/gold.png', name: 'Gold', apy: 23, wallet: 300 },
     { photo: '/imgs/gold.png', name: 'Gold', apy: 23, wallet: 300 },
     { photo: '/imgs/gold.png', name: 'Gold', apy: 23, wallet: 300 },
     { photo: '/imgs/gold.png', name: 'Gold', apy: 23, wallet: 300 }
-  ]
+  ];
 
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
-  const [isCollateralModal, setIsCollateralModal] = useState<boolean>(false)
-  const [selectedItem, setSelectedItem] = useState<any>()
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [isCollateralModal, setIsCollateralModal] = useState<boolean>(false);
+  const [borrowRepayOpen, setBorrowRepayOpen] = useState<boolean>(false);
+  const [selectedItem, setSelectedItem] = useState<any>();
 
   const handleClickButton = (item: any) => {
-    setIsModalOpen(true)
-    setSelectedItem(item)
+    setIsModalOpen(true);
+    setSelectedItem(item);
+  }
+
+  const openBorrowRepay = () => {
+    setBorrowRepayOpen(true);
+    setIsCollateralModal(false);
   }
 
   return (
@@ -39,45 +48,49 @@ export const SupplyMarket:React.FC<SupplyMarketProps> = (props: SupplyMarketProp
       <Container>
         <h1>supply market</h1>
         <TableWrapper>
-          <Table>
-            <Thead>
-              <tr>
-                <th>assets</th>
-                <th>apy</th>
-                <th>wallet</th>
-                <th></th>
-              </tr>
-            </Thead>
-            {dumy.map((item, i) => (
-              <Tbody key={i} activeColor={i%2 === 0}>
+          <TableInnerWrapper>
+            <Table>
+              <Thead>
                 <tr>
-                  <td>
-                    <AssetsWrapper>
-                      <img src={item.photo} alt='' />
-                      <span>{item?.name}</span>
-                    </AssetsWrapper>
-                  </td>
-                  <td>{item.apy}</td>
-                  <td>{item.wallet}</td>
-                  <td>
-                    <Button
-                      color='primary'
-                      naked
-                      onClick={() => handleClickButton(item)}
-                    >
-                      Supply
-                    </Button>
-                  </td>
+                  <th>assets</th>
+                  <th>apy</th>
+                  <th>wallet</th>
+                  <th></th>
                 </tr>
-              </Tbody>
-            ))}
-          </Table>
+              </Thead>
+              {dumy.map((item, i) => (
+                <Tbody key={i} activeColor={i%2 === 0}>
+                  <tr>
+                    <td>
+                      <AssetsWrapper>
+                        <img src={item.photo} alt='' />
+                        <span>{item?.name}</span>
+                      </AssetsWrapper>
+                    </td>
+                    <td>{item.apy}</td>
+                    <td>{item.wallet}</td>
+                    <td>
+                      <Button
+                        color='primary'
+                        naked
+                        onClick={() => handleClickButton(item)}
+                      >
+                        Supply
+                      </Button>
+                    </td>
+                  </tr>
+                </Tbody>
+              ))}
+            </Table>
+          </TableInnerWrapper>
+
         </TableWrapper>
       </Container>
       <Modal
         width='381px'
         open={isModalOpen}
         borderRadius='43px'
+        isTransparent
         onClose={() => setIsModalOpen(false)}
       >
         <SupplyForm
@@ -93,7 +106,20 @@ export const SupplyMarket:React.FC<SupplyMarketProps> = (props: SupplyMarketProp
         borderRadius='43px'
         onClose={() => setIsCollateralModal(false)}
       >
-        <Collateral />
+        <Collateral
+          openBorrowRepay={openBorrowRepay}
+        />
+      </Modal>
+      <Modal
+        width='381px'
+        open={borrowRepayOpen}
+        borderRadius='43px'
+        onClose={() => setBorrowRepayOpen(false)}
+      >
+        <BorrowRepay
+          handleChangeBorrow={handleChangeBorrow}
+          market={selectedItem}
+        />
       </Modal>
     </>
 

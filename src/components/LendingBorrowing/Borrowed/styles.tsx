@@ -47,6 +47,7 @@ export const Thead = styled.thead`
       text-transform: capitalize;
       color: #FFFFFF;
       opacity: 0.6;
+      white-space: nowrap;
     }
   }
 `

@@ -1,23 +1,41 @@
 import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
+  overflow: hidden;
+  margin-top: 20px;
 
+  > h1 {
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    margin-top: 0px;
+    font-weight: 600;
+    font-size: 17px;
+    margin-left: 15px;
+  }
 `
 
 export const TableWrapper = styled.div`
-  background: rgb(255 255 255 / 3%);
   border-radius: 23px;
+  overflow: hidden;
+`
+
+export const TableInnerWrapper = styled.div`
+  background: rgb(255 255 255 / 3%);
   padding-top: 15px;
-  overflow: auto;
+  overflow: auto; 
 `
 
 export const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
-  min-width: 400px;
+  min-width: 350px;
   th, td {
-    padding: 12px 25px;
+    padding: 10px 15px;
     text-align: left;
+
+    @media (min-width: 768px) {
+      padding: 14px 25px;
+    }
   }
 `
 

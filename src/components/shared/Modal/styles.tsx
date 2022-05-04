@@ -31,6 +31,7 @@ export const ModalDialog = styled.div<ModalDialogProps>`
   height: ${({ height }) => height || '100%'};;
   max-height: 100vh;
   overflow: auto;
+  box-shadow: 0px 20px 99px rgba(75, 72, 246, 0.26);
 
   @media (min-width: 769px) {
     width: ${({ width }) => width || '50%'};

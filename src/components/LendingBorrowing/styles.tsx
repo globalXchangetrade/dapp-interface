@@ -19,11 +19,12 @@ export const ProgressBox = styled.div`
   align-items: center;
   justify-content: space-between;
   border-radius: 27px;
-  padding: 16px 30px;
+  padding: 12px 15px;
   background: linear-gradient(440.31deg, #2B2263 7.82%, #6D24E4 91.92%);
   flex-direction: column;
 
-  @media (min-width: 700px) {
+  @media (min-width: 576px) {
+    padding: 16px 30px;
     flex-direction: row;
   }
 `
@@ -60,6 +61,11 @@ export const ProgressBarWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 10px 0px;
+
+  @media (min-width: 576px) {
+    margin: 0px 10px;
+  }
 `
 
 export const ProgressTextWrapper = styled.div`
@@ -88,6 +94,11 @@ export const ProgressTextWrapper = styled.div`
 
 export const RightPriceWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+
+  @media (min-width: 576px) {
+    flex-direction: row;
+  }
 `
 
 export const LimitWrapper = styled.div`

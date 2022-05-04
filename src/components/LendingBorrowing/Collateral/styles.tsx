@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   padding: 25px;
+  background: linear-gradient(167.08deg, #111216 7.54%, #111216 56.49%);
 
   > p {
     font-weight: 400;
@@ -24,6 +25,7 @@ export const Container = styled.div`
 export const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 `
 
 export const Tbody = styled.tbody`

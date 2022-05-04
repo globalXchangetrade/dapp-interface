@@ -3,6 +3,7 @@ import { CircleProgressBar } from '../MarketPlace/CircleProgressBar';
 import { SupplyMarket } from './SupplyMarket';
 import { BorrowMarket } from './BorrowMarket';
 import { Supplied } from './Supplied';
+import { Borrowed } from './Borrowed'
 import {
   Container,
   InnerContainer,
@@ -18,10 +19,15 @@ import {
 } from './styles';
 
 export const LendingBorrowing = () => {
-  const [isSupply, setIsSupply] = useState<boolean>(false)
+  const [isSupply, setIsSupply] = useState<boolean>(false);
+  const [isBorrow, setIsBorrow] = useState<boolean>(false);
 
   const handleChangeSupply = (index: boolean) => {
-    setIsSupply(index)
+    setIsSupply(index);
+  }
+
+  const handleChangeBorrow = (index: boolean) => {
+    setIsBorrow(index);
   }
 
   return (
@@ -64,8 +70,10 @@ export const LendingBorrowing = () => {
         </ProgressBox>
         <ContentWrapper>
           {isSupply && <Supplied />}
+          {isBorrow && <Borrowed />}
           <SupplyMarket
             handleChangeSupply={handleChangeSupply}
+            handleChangeBorrow={handleChangeBorrow}
           />
           <BorrowMarket />
         </ContentWrapper>

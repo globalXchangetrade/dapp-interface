@@ -32,7 +32,7 @@ const ModalUI = (props: any) => {
       const bodyPaddingRight = window.document.body.style.paddingRight
       document.body.style.paddingRight = props.open ? `${bodyPaddingRight + scrollbarWidth}px` : `${bodyPaddingRight}px`
     }
-    document.body.style.overflow = props.open ? 'hidden' : 'auto'
+    // document.body.style.overflow = props.open ? 'hidden' : 'auto'
     if (props.open) {
       window.addEventListener('keydown', handleKeyDown)
       return () => window.removeEventListener('keydown', handleKeyDown)

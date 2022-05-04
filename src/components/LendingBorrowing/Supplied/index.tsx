@@ -1,11 +1,13 @@
 import React from 'react';
+import { Toggle } from '../../shared/Toggle';
 import {
   Container,
   TableWrapper,
   Table,
   Thead,
   Tbody,
-  AssetsWrapper
+  AssetsWrapper,
+  TableInnerWrapper
 } from './styles';
 
 export const Supplied:React.FC = () => {
@@ -22,33 +24,39 @@ export const Supplied:React.FC = () => {
       <Container>
         <h1>Supplied</h1>
         <TableWrapper>
-          <Table>
-            <Thead>
-              <tr>
-                <th>Assets</th>
-                <th>Apy</th>
-                <th>Balance</th>
-                <th>Collateral</th>
-              </tr>
-            </Thead>
-            {dumy.map((item, i) => (
-              <Tbody key={i} activeColor={i%2 === 0}>
+          <TableInnerWrapper>
+            <Table>
+              <Thead>
                 <tr>
-                  <td>
-                    <AssetsWrapper>
-                      <img src={item.photo} alt='' />
-                      <span>{item?.name}</span>
-                    </AssetsWrapper>
-                  </td>
-                  <td>{item.apy}</td>
-                  <td>{item.wallet}</td>
-                  <td>
-                    
-                  </td>
+                  <th>Assets</th>
+                  <th>Apy</th>
+                  <th>Balance</th>
+                  <th>Collateral</th>
                 </tr>
-              </Tbody>
-            ))}
-          </Table>
+              </Thead>
+              {dumy.map((item, i) => (
+                <Tbody key={i} activeColor={i%2 === 0}>
+                  <tr>
+                    <td>
+                      <AssetsWrapper>
+                        <img src={item.photo} alt='' />
+                        <span>{item?.name}</span>
+                      </AssetsWrapper>
+                    </td>
+                    <td>{item.apy}</td>
+                    <td>{item.wallet}</td>
+                    <td>
+                      <Toggle
+                        label={i}
+                        defaultChecked={true}
+                      />
+                    </td>
+                  </tr>
+                </Tbody>
+              ))}
+            </Table>
+          </TableInnerWrapper>
+
         </TableWrapper>
       </Container>
     </>
