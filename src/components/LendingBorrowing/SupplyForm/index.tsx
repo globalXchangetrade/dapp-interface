@@ -10,7 +10,8 @@ import {
   SupplyWrapper,
   Table,
   Tbody,
-  BalanceWrapper
+  BalanceWrapper,
+  ActiveBox
 } from './styles'
 
 interface SupplyProps {
@@ -23,7 +24,7 @@ interface SupplyProps {
 export const SupplyForm:React.FC<SupplyProps> = (props: SupplyProps) => {
   const { market, handleChangeSupply, setIsCollateralModal, onClose } = props
 
-  const [max, setMax] = useState<any>(0)
+  const [max, setMax] = useState<any>('')
   const [selectedTab, setSelectedTab] = useState<string>('supply')
 
   const tabList = [
@@ -48,7 +49,7 @@ export const SupplyForm:React.FC<SupplyProps> = (props: SupplyProps) => {
             type='text'
             value={max}
             onChange={(e: any) => setMax(e.target.value)}
-            placeholder='Amount'
+            placeholder='0'
             onKeyPress={(e) => {
               if (!/^[0-9.]$/.test(e.key)) {
                 e.preventDefault()
@@ -59,6 +60,7 @@ export const SupplyForm:React.FC<SupplyProps> = (props: SupplyProps) => {
         </InputWrapper>
       </AmountWrapper>
       <Tabs>
+        <ActiveBox active={selectedTab === 'withdraw'} />
         {tabList.map((item, i) => (
           <Tab
             key={i}

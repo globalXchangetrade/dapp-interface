@@ -10,7 +10,8 @@ import {
   SupplyWrapper,
   Table,
   Tbody,
-  BalanceWrapper
+  BalanceWrapper,
+  ActiveBox
 } from './styles'
 
 interface BorrowRepayProps {
@@ -26,7 +27,7 @@ export const BorrowRepay:React.FC<BorrowRepayProps> = (props: BorrowRepayProps) 
 
   const tabList = [
     { key: 'borrow', name: 'Borrow' },
-    { key: 'repay', name: 'repay' }
+    { key: 'repay', name: 'Repay' }
   ]
 
   return (
@@ -52,6 +53,7 @@ export const BorrowRepay:React.FC<BorrowRepayProps> = (props: BorrowRepayProps) 
         </InputWrapper>
       </AmountWrapper>
       <Tabs>
+        <ActiveBox active={selectedTab === 'repay'} />
         {tabList.map((item, i) => (
           <Tab
             key={i}

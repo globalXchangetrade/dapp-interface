@@ -30,11 +30,11 @@ export const Table = styled.table`
   border-collapse: collapse;
   min-width: 350px;
   th, td {
-    padding: 10px 15px;
+    padding: 8.5px 15px;
     text-align: left;
 
     @media (min-width: 768px) {
-      padding: 14px 25px;
+      padding: 12.5px 25px;
     }
   }
 `

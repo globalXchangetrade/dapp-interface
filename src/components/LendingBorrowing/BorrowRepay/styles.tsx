@@ -58,6 +58,7 @@ export const Tabs = styled.div`
   align-items: center;
   width: 100%;
   background-color: rgb(196 196 196 / 5%);
+  position: relative;
 `
 
 interface TabProps {
@@ -71,6 +72,7 @@ export const Tab = styled.div<TabProps>`
   width: 50%;
   padding: 7px 15px;
   cursor: pointer;
+  position: relative;
 
   span {
     font-weight: 500;
@@ -81,8 +83,6 @@ export const Tab = styled.div<TabProps>`
   }
 
   ${(props: any) => props.active && css`
-    background: linear-gradient(260.31deg, #2B2263 7.82%, #6D24E4 91.92%);
-    border-radius: 11px;
     span {
       opacity: 1;
     }
@@ -133,4 +133,23 @@ export const BalanceWrapper = styled.p`
   font-size: 10px;
   line-height: 15px;
   margin: 5px 0px;
+`
+interface ActiveBoxProps {
+  readonly active?: boolean
+}
+
+export const ActiveBox = styled.div<ActiveBoxProps>`
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(80.31deg, #2B2263 7.82%, #6D24E4 91.92%);
+  border-radius: 0px 11px 11px 0px;
+  transform: translateX(0%);
+  transition: all 0.3s linear;
+
+  ${(props: any) => props.active && css`
+    transform: translateX(100%);
+    background: linear-gradient(260.31deg, #2B2263 7.82%, #6D24E4 91.92%);
+    border-radius: 11px 0px 0px 11px;
+  `};
 `
