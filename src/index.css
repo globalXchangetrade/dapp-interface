@@ -21,7 +21,7 @@ code {
 @media (min-width: 578px) {
   /** Mozilla scrollbar*/
   * {
-    scrollbar-color: #CCC !important;
+    scrollbar-color: red !important;
     scrollbar-width: thin !important;
   }
 
@@ -31,7 +31,7 @@ code {
     height: 6px;
   }
   ::-webkit-scrollbar-thumb {
-    background: '#40475D';
+    background: #40475D;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {

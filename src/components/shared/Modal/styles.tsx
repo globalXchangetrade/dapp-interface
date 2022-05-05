@@ -17,11 +17,12 @@ interface ModalDialogProps {
   readonly height?: string;
   readonly width?: string;
   readonly borderRadius?: string;
+  readonly borderColor?: string;
 };
 
 export const ModalDialog = styled.div<ModalDialogProps>`
   position: relative;
-  background-color: ${({ isTransparent }) => isTransparent ? 'transparent' : '#111216'};
+  background: ${({ isTransparent }) => isTransparent ? 'transparent' : 'linear-gradient(167.08deg, #111216 7.54%, #111216 56.49%)'};
   padding: ${({ padding }) => padding || '0px'};
   width: 100vw;
   border-radius: 0px;
@@ -31,6 +32,8 @@ export const ModalDialog = styled.div<ModalDialogProps>`
   height: ${({ height }) => height || '100%'};;
   max-height: 100vh;
   overflow: auto;
+  border-width: 1px;
+  border-color: ${({ borderColor }) => borderColor ? borderColor : 'transparent'};;
   box-shadow: 0px 20px 99px rgba(75, 72, 246, 0.26);
 
   @media (min-width: 769px) {

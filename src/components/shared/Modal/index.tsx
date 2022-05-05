@@ -47,6 +47,7 @@ const ModalUI = (props: any) => {
       padding={props.padding}
       isTransparent={isTransparent}
       borderRadius={props.borderRadius}
+      borderColor={props.borderColor}
     >
       {isProductForm && (
         <ModalBackHeader />

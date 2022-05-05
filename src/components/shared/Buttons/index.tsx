@@ -44,6 +44,7 @@ export const IconButton = styled.button<IconButtonProps>`
 interface ButtonProps {
   readonly borderRadius?: string;
   readonly naked?: boolean;
+  readonly initialIcon?: boolean;
 };
 
 export const Button = styled.button<ButtonProps>`
@@ -73,18 +74,14 @@ export const Button = styled.button<ButtonProps>`
   `}
   ${(props: any) => props.initialIcon && css`
     text-align: left;
-    ${props => props.theme?.rtl && css`
-      text-align: right;
-    `}
-    img{
+    img {
       vertical-align: middle;
     }
+    svg {
+      font-size: 18px;
+    }
     span {
-      padding-left: 15%
-      ${props => props.theme?.rtl && css`
-        padding-right: 15%;
-        padding-left: 0
-    `}
+      padding-left: 5px;
     }
   `}
   ${(props: any) => props.outline && css`
@@ -128,8 +125,7 @@ export const Button = styled.button<ButtonProps>`
     align-items: center;
     background-image: linear-gradient(440.31deg, #2B2263 7.82%, #6D24E4 91.92%);
     text-align: center;
-    background-size: 200% auto;     
-    display: block;
+    background-size: 200% auto;
     color: white;
     &:hover {
       background-position: right center; /* change the direction of the change here */
@@ -156,5 +152,54 @@ export const Button = styled.button<ButtonProps>`
         background-image: linear-gradient(440.31deg, #2B2263 7.82%, #6D24E4 91.92%);
       }
     `}
+  `}
+
+  ${({ color }) => color === 'primary' && css`
+    display: flex;
+    align-items: center;
+    background: linear-gradient(440.31deg, #2B2263 7.82%, #6D24E4 91.92%);
+    text-align: center;
+    background-size: 200% auto;
+    color: white;
+    &:hover {
+      background-position: right center; /* change the direction of the change here */
+      text-decoration: none;
+    }
+    &:active {
+      background-position: right center; /* change the direction of the change here */
+      text-decoration: none;
+    }
+  `}
+  ${({ color }) => color === 'red' && css`
+    display: flex;
+    align-items: center;
+    background: linear-gradient(440.31deg, #632222 7.82%, #E42424 91.92%);
+    text-align: center;
+    background-size: 200% auto;
+    color: white;
+    &:hover {
+      background-position: right center; /* change the direction of the change here */
+      text-decoration: none;
+    }
+    &:active {
+      background-position: right center; /* change the direction of the change here */
+      text-decoration: none;
+    }
+  `}
+  ${({ color }) => color === 'yellow' && css`
+    display: flex;
+    align-items: center;
+    background: linear-gradient(89.27deg, #DF8907 6.26%, #FC9D0D 102.54%);
+    text-align: center;
+    background-size: 200% auto;
+    color: white;
+    &:hover {
+      background-position: right center; /* change the direction of the change here */
+      text-decoration: none;
+    }
+    &:active {
+      background-position: right center; /* change the direction of the change here */
+      text-decoration: none;
+    }
   `}
 `

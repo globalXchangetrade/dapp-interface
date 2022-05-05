@@ -65,7 +65,7 @@ export const MenuItem = styled.div<MenuItemProps>`
   font-size: 13px;
   line-height: 16px;
   text-transform: capitalize;
-  padding: 7px 12px;
+  padding: 5px 8px;
   cursor: pointer;
   transition: all 0.2s linear;
   margin: 0px 7px;
@@ -77,6 +77,10 @@ export const MenuItem = styled.div<MenuItemProps>`
 
   @media (min-width: 1024px) {
     margin: 0px 4px;
+  }
+
+  @media (min-width: 1100px) {
+    padding: 7px 12px;
   }
 `
 

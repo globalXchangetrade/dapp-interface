@@ -34,6 +34,7 @@ export const Header = () => {
     { path: '/swap', title: 'Swap' },
     { path: '/market-place', title: 'Marketplace' },
     { path: '/lending-borrowing', title: 'Lending Borrowing' },
+    { path: '/stake', title: 'Stake' },
     { path: '/option', title: 'Option' },
     { path: '/index', title: 'Index' },
     { path: '/portfolio', title: 'portfolio' }

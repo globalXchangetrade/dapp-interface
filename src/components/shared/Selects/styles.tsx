@@ -41,7 +41,7 @@ interface OptionsProps {
 export const Options = styled.div<OptionsProps>`
   position: absolute;
   min-width: 100%;
-  background: linear-gradient(458deg,rgb(72 163 246 / 10%) 9.22%,rgb(23 128 224 / 10%) 83.63%);
+  background: #1e1c22;
   margin-top: 5px;
   z-index: 10000;
   box-shadow: 0px 4px 10px rgb(0 0 0 / 5%);
