@@ -1,15 +1,15 @@
-import React from 'react'
-import ReactApexChart from 'react-apexcharts'
-import moment from 'moment'
+import React from 'react';
+import ReactApexChart from 'react-apexcharts';
+import moment from 'moment';
 import {
   Container
-} from './styles'
+} from './styles';
 
 export const DetailChart:React.FC = () => {
   const series = [{
     name: "Gold",
     data: [19, 45, 13, 51, 49, 62, 69]
-  }]
+  }];
 
   const options: any = {
     chart: {

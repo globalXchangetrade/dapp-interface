@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Modal } from '../shared';
+import { Button } from '../../styles';
+import { Modal } from '../shared';
 import { Plus } from '../shared/SvgIcons';
 import { Card } from './Card';
 import { SearchAssets } from './SearchAssets';

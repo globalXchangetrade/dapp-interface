@@ -1,31 +1,17 @@
-import React, { useState } from 'react'
-import { SearchBar } from '../SearchBar'
-import { Button, IconButton, Select } from '../shared'
-import { Filter } from '../shared/SvgIcons'
-import { Card } from './Card'
+import React from 'react';
+import { Card } from './Card';
 
 import {
   Container,
   InnerContainer,
-  FilterWrapper,
-  SearchWrapper,
-  SelectWrapper,
-  CurrencyFilterWrapper,
   UpcomingWrapper,
   CardListWrapper,
   MarketCardListWrapper
-} from './styles'
-import { UpcomingCard } from './UpcomingCard'
+} from './styles';
+import { UpcomingCard } from './UpcomingCard';
+import { FilterGroup } from '../shared';
 
 export const MarketPlace:React.FC = () => {
-
-  const [currency, setCurrency] = useState<string>('usd')
-
-  const currencyList = [
-    { value: 'usd', content: 'USD' },
-    { value: 'bnb', content: 'BNB' },
-    { value: 'hyperx', content: 'Hyperx' }
-  ]
 
   const upcomingList: any = [
     { logo: '/imgs/mtsubishi.png', title: 'MITSUBISHI', price: '$45', currency: 'USD', time: '7D 12:23:23', supply: 100, country_flag: '/imgs/japan-flag.png', available_percent: 23, data: [{ x: 1996, y: 322 },
@@ -49,7 +35,7 @@ export const MarketPlace:React.FC = () => {
       { x: 2014, y: 329 },
       { x: 2015, y: 334}
     ] }
-  ]
+  ];
 
   const cardList: any = [
     { logo: '/imgs/gold.png', title: 'GOLD', price: '$145', currency: 'USD', tvl: '24M', volume_24: '24M', change: 24, high: '24M', low: '24M', volume_7: '24M',     data: [{ x: 1996, y: 322 },
@@ -115,40 +101,12 @@ export const MarketPlace:React.FC = () => {
       { x: 2014, y: 389 },
       { x: 2015, y: 334}
     ] }
-  ]
+  ];
 
   return (
     <Container>
       <InnerContainer>
-        <FilterWrapper>
-          <div>
-            <SearchWrapper>
-              <SearchBar
-                placeholder='Search Stocks and Metals'
-                onSearch={(val: string) => console.log(val)}
-                search=''
-              />
-              <Button
-                color='primary'
-                borderRadius='28px'
-              >SEARCH</Button>
-            </SearchWrapper>
-            <CurrencyFilterWrapper>
-              <SelectWrapper>
-                <Select
-                  notReload
-                  placeholder='Select currency'
-                  options={currencyList}
-                  defaultValue={currency}
-                  onChange={(val: string) => setCurrency(val)}
-                />
-              </SelectWrapper>
-              <IconButton borderRadius='10px'>
-                <Filter />
-              </IconButton>
-            </CurrencyFilterWrapper>
-          </div>
-        </FilterWrapper>
+        <FilterGroup />
         <UpcomingWrapper>
           <h1>Upcoming</h1>
           <CardListWrapper>

@@ -3,7 +3,7 @@ import { CircleProgressBar } from '../MarketPlace/CircleProgressBar';
 import { SupplyMarket } from './SupplyMarket';
 import { BorrowMarket } from './BorrowMarket';
 import { Supplied } from './Supplied';
-import { Borrowed } from './Borrowed'
+import { Borrowed } from './Borrowed';
 import {
   Container,
   InnerContainer,
@@ -24,11 +24,11 @@ export const LendingBorrowing = () => {
 
   const handleChangeSupply = (index: boolean) => {
     setIsSupply(index);
-  }
+  };
 
   const handleChangeBorrow = (index: boolean) => {
     setIsBorrow(index);
-  }
+  };
 
   return (
     <Container>

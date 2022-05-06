@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { Calendar } from '../../shared/SvgIcons'
-import { Select, Button } from '../../shared'
+import React, { useState } from 'react';
+import { Calendar } from '../../shared/SvgIcons';
+import { Select, Button } from '../../../styles';
 import {
   Container,
   TitleWrapper,
@@ -21,24 +21,24 @@ import {
   Option,
   Balance,
   ChartView
-} from './styles'
+} from './styles';
 import { DetailChart } from '../DetailChart';
 
 interface CardDetailProps {
   card: any;
-}
+};
 
 export const CardDetail:React.FC<CardDetailProps> = (props: CardDetailProps) => {
-  const { card } = props
+  const { card } = props;
 
-  const [selectedType, setSelectedType] = useState<string>('price')
-  const [selectedDate, setSelectedDate] = useState<string>('1')
+  const [selectedType, setSelectedType] = useState<string>('price');
+  const [selectedDate, setSelectedDate] = useState<string>('1');
 
   const typeList = [
     { value: 'price', name: 'Price' },
     { value: 'market_cap', name: 'Market cap' },
     { value: 'trading_view', name: 'Trading view' }
-  ]
+  ];
 
   const dayList = [
     { value: '1', name: '1D' },
@@ -49,23 +49,23 @@ export const CardDetail:React.FC<CardDetailProps> = (props: CardDetailProps) => 
     { value: 'all', name: 'ALL' },
     { value: 'calendar', name: <Calendar /> },
     { value: 'log', name: 'Log' }
-  ]
+  ];
 
   const currencyList = [
     { value: 'usd', content: 'USD' },
     { value: 'bnb', content: 'BNB' },
     { value: 'hyperx', content: 'Hyperx' },
-  ]
+  ];
 
   const tokenOptions = [
     { value: 'dai', content: <Option><img src='/imgs/gold.png' alt='' /><span className='token'>DAI</span></Option> },
     { value: 'bitcoin', content: <Option><img src='/imgs/gold.png' alt='' /><span className='token'>Bitcoin</span></Option> }
-  ]
+  ];
 
   const checkColor = (percent: number) => {
     if (percent > 0) return '#5CD25D'
     else return '#F11818'
-  }
+  };
 
   return (
     <Container>

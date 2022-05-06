@@ -15,7 +15,7 @@ export const Borrowed:React.FC = () => {
     { photo: '/imgs/gold.png', name: 'Gold', apy: 23, wallet: 300, limit_percent: 24 },
     { photo: '/imgs/gold.png', name: 'Gold', apy: 23, wallet: 300, limit_percent: 24 },
     { photo: '/imgs/gold.png', name: 'Gold', apy: 23, wallet: 300, limit_percent: 24 }
-  ]
+  ];
 
   return (
     <Container>

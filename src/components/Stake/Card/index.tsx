@@ -1,5 +1,5 @@
-import React from 'react'
-import { Button } from '../../shared';
+import React from 'react';
+import { Button } from '../../../styles';
 import {
   Container,
   Header,
@@ -7,10 +7,10 @@ import {
   Table,
   Tbody,
   ButtonWrapper
-} from './styles'
+} from './styles';
 
 interface CardProps {
-  position: any
+  position: any;
 }
 
 export const Card:React.FC<CardProps> = (props: CardProps) => {

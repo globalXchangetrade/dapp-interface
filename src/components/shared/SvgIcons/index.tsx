@@ -123,4 +123,4 @@ export {
   Expand,
   Plus,
   Info
-}
+};

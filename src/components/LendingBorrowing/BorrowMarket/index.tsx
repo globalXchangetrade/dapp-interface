@@ -15,7 +15,7 @@ export const BorrowMarket:React.FC = () => {
     { photo: '/imgs/gold.png', name: 'Gold', apy: 23, wallet: 300, Liquidity: '1.23M' },
     { photo: '/imgs/gold.png', name: 'Gold', apy: 23, wallet: 300, Liquidity: '1.23M' },
     { photo: '/imgs/gold.png', name: 'Gold', apy: 23, wallet: 300, Liquidity: '1.23M' }
-  ]
+  ];
 
   return (
     <Container>

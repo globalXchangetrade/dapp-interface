@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Button } from '../../shared'
+import React, { useState } from 'react';
+import { Button } from '../../../styles';
 import {
   Container,
   Title,
@@ -12,30 +12,30 @@ import {
   Tbody,
   BalanceWrapper,
   ActiveBox
-} from './styles'
+} from './styles';
 
 interface SupplyProps {
   market: any,
   handleChangeSupply: any
   setIsCollateralModal: any,
   onClose: any
-}
+};
 
 export const SupplyForm:React.FC<SupplyProps> = (props: SupplyProps) => {
-  const { market, handleChangeSupply, setIsCollateralModal, onClose } = props
+  const { market, handleChangeSupply, setIsCollateralModal, onClose } = props;
 
-  const [max, setMax] = useState<any>('')
-  const [selectedTab, setSelectedTab] = useState<string>('supply')
+  const [max, setMax] = useState<any>('');
+  const [selectedTab, setSelectedTab] = useState<string>('supply');
 
   const tabList = [
     { key: 'supply', name: 'Supply' },
     { key: 'withdraw', name: 'Withdraw' }
-  ]
+  ];
 
   const handleChangeWithdraw = () => {
-    onClose()
-    setIsCollateralModal(true)
-  }
+    onClose();
+    setIsCollateralModal(true);
+  };
 
   return (
     <Container>

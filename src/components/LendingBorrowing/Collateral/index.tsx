@@ -1,17 +1,17 @@
-import React from 'react'
-import { Button } from '../../shared'
+import React from 'react';
+import { Button } from '../../../styles';
 import {
   Container,
   Table,
   Tbody
-} from './styles'
+} from './styles';
 
 interface CollateralProps {
   openBorrowRepay: any
-}
+};
 
 export const Collateral:React.FC<CollateralProps> = (props: CollateralProps) => {
-  const { openBorrowRepay } = props
+  const { openBorrowRepay } = props;
 
   return (
     <Container>
@@ -39,4 +39,4 @@ export const Collateral:React.FC<CollateralProps> = (props: CollateralProps) => 
       </Button>
     </Container>
   )
-}
+};

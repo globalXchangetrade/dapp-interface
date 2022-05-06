@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Select } from '../../shared';
+import { Button, Select } from '../../../styles';
 import { Info, Plus } from '../../shared/SvgIcons';
 import {
   Container,
@@ -26,7 +26,7 @@ interface StakeFormProps {
 export const StakeForm:React.FC<StakeFormProps> = (props: StakeFormProps) => {
   const { position, handleAddPositionList } = props;
 
-  const [selectedToken, setSelectedToken] = useState('gold')
+  const [selectedToken, setSelectedToken] = useState('gold');
 
   const tokenOptions = [
     { value: 'eth', content: <Option><img src='/imgs/eth.png' alt='' /><span className='token'>ETH/STIR</span></Option> },
@@ -34,7 +34,7 @@ export const StakeForm:React.FC<StakeFormProps> = (props: StakeFormProps) => {
   ];
 
   const handleChangePosition = () => {
-    handleAddPositionList(position)
+    handleAddPositionList(position);
   }
 
   return (

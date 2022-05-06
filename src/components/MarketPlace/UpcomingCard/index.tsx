@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { Button, IconButton } from '../../shared'
-import { Clock, Eye, Expand } from '../../shared/SvgIcons'
-import { CircleProgressBar } from '../CircleProgressBar'
+import React, { useEffect, useState } from 'react';
+import { Button, IconButton } from '../../../styles';
+import { Clock, Eye, Expand } from '../../shared/SvgIcons';
+import { CircleProgressBar } from '../CircleProgressBar';
 import {
   Container,
   InnerContainer,
@@ -17,18 +17,18 @@ import {
   Available,
   ButtonWrapper,
   Divider
-} from './styles'
-import { ChartItem } from '../ChartItem'
+} from './styles';
+import { ChartItem } from '../ChartItem';
 
 interface UpcomingCardProps {
   card?: any,
   key?: number
-}
+};
 
 export const UpcomingCard:React.FC<UpcomingCardProps> = (props: UpcomingCardProps) => {
-  const { card } = props
+  const { card } = props;
 
-  const [series, setSeries] = useState<Array<any>>([])
+  const [series, setSeries] = useState<Array<any>>([]);
 
   useEffect(() => {
     const _series = []
@@ -38,7 +38,7 @@ export const UpcomingCard:React.FC<UpcomingCardProps> = (props: UpcomingCardProp
     }
     _series.push(obj)
     setSeries(_series)
-  }, [card])
+  }, [card]);
 
   return (
     <Container>

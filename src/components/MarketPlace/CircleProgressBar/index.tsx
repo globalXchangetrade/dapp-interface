@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import {
   CircleProgressBarContainer
-} from './styles'
+} from './styles';
 
 interface CircleProgressBarProps {
   sqSize: number,
@@ -9,7 +9,7 @@ interface CircleProgressBarProps {
   strokeWidth: number,
   inactiveColor?: string;
   activeColor?: string;
-}
+};
 
 export const CircleProgressBar:React.FC<CircleProgressBarProps> = (props: CircleProgressBarProps) => {
   const { sqSize, percentage,  strokeWidth, inactiveColor, activeColor} = props

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { Button, IconButton, Select } from '../shared'
-import ethIcon from '../../assets/icons/eth-icon.png'
+import { Button, IconButton, Select } from '../../styles'
 import { useWindowSize } from '../../hooks/useWindowsSize'
 import { List } from '../shared/SvgIcons'
 
@@ -41,8 +40,8 @@ export const Header = () => {
   ]
 
   const tokenOptions = [
-    { value: 'ethereum', content: <Option><img src={ethIcon} alt='' /><span className='token'>Ethereum</span></Option> },
-    { value: 'bitcoin', content: <Option><img src={ethIcon} alt='' /><span className='token'>Bitcoin</span></Option> }
+    { value: 'ethereum', content: <Option><img src='/imgs/eth.png' alt='' /><span className='token'>Ethereum</span></Option> },
+    { value: 'bitcoin', content: <Option><img src='/imgs/eth.png' alt='' /><span className='token'>Bitcoin</span></Option> }
   ]
 
   const handleGoToPage = (index: string) => {

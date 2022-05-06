@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Modal } from '../../shared';
+import { Button } from '../../../styles';
+import { Modal } from '../../shared';
 import { BorrowRepay } from '../BorrowRepay';
 import { Collateral } from '../Collateral';
 import { SupplyForm } from '../SupplyForm';
@@ -36,12 +37,12 @@ export const SupplyMarket:React.FC<SupplyMarketProps> = (props: SupplyMarketProp
   const handleClickButton = (item: any) => {
     setIsModalOpen(true);
     setSelectedItem(item);
-  }
+  };
 
   const openBorrowRepay = () => {
     setBorrowRepayOpen(true);
     setIsCollateralModal(false);
-  }
+  };
 
   return (
     <>

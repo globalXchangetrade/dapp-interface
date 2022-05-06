@@ -1,5 +1,5 @@
 import React from 'react';
-import { Toggle } from '../../shared/Toggle';
+import { Toggle } from '../../../styles';
 import {
   Container,
   TableWrapper,
@@ -17,7 +17,7 @@ export const Supplied:React.FC = () => {
     { photo: '/imgs/gold.png', name: 'Gold', apy: 23, wallet: 300 },
     { photo: '/imgs/gold.png', name: 'Gold', apy: 23, wallet: 300 },
     { photo: '/imgs/gold.png', name: 'Gold', apy: 23, wallet: 300 }
-  ]
+  ];
 
   return (
     <>

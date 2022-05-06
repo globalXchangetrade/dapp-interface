@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Input } from '../../shared'
+import React, { useEffect, useState } from 'react';
+import { Input } from '../../../styles';
 import { Info } from '../../shared/SvgIcons';
 import {
   Container,
@@ -9,17 +9,17 @@ import {
   PriceChart,
   LogoWrapper,
   SearchResultBoxWrapper
-} from './styles'
+} from './styles';
 
 interface SearchAssetsProps {
   setSelectedAsset?: any
-}
+};
 
 export const SearchAssets:React.FC<SearchAssetsProps> = (props: SearchAssetsProps) => {
-  const { setSelectedAsset } = props
+  const { setSelectedAsset } = props;
 
   const [value, setValue] = useState<string>('');
-  const [pairList, setPairList] = useState<any>([])
+  const [pairList, setPairList] = useState<any>([]);
 
   const dumyPairList: any = [
     { id: 1, logo: '/imgs/eth.png', name: 'ETH/STIR', price: 0 },
@@ -33,29 +33,29 @@ export const SearchAssets:React.FC<SearchAssetsProps> = (props: SearchAssetsProp
     { id: 9, logo: '/imgs/eth.png', name: 'ETH/STIR', price: 0 },
     { id: 10, logo: '/imgs/eth.png', name: 'ETH/STIR', price: 0 },
     { id: 11, logo: '/imgs/eth.png', name: 'ETH/STIR', price: 0 }
-  ]
+  ];
 
   const handleChangeValue = (e: any) => {
-    setValue(e.target.value)
-  }
+    setValue(e.target.value);
+  };
 
   const handleChangeAsset = (item: any) => {
-    setSelectedAsset(item)
+    setSelectedAsset(item);
   }
 
   const stakePoolList = [
     { logo: '', name: 'ETH/STIR', info: true, price: 0 },
     { logo: '', name: 'ETH/STIR', info: true, price: 0 }
-  ]
+  ];
 
   useEffect(() => {
-    setPairList(dumyPairList)
-  }, [])
+    setPairList(dumyPairList);
+  }, []);
 
   useEffect(() => {
-    const updatedList: any = dumyPairList.filter((item: any): any => item?.name?.toLowerCase().includes(value?.toLowerCase()))
-    setPairList(updatedList)
-  }, [value])
+    const updatedList: any = dumyPairList.filter((item: any): any => item?.name?.toLowerCase().includes(value?.toLowerCase()));
+    setPairList(updatedList);
+  }, [value]);
 
   return (
     <Container>

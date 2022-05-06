@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Button, IconButton } from '../../../styles';
 import { Modal } from '../../shared';
 import { Eye, Expand } from '../../shared/SvgIcons';
-import { CardDetail } from '../CardDetail';
-import { ChartItem } from '../ChartItem';
+import { CardDetail } from '../../MarketPlace/CardDetail';
+import { ChartItem } from '../../MarketPlace/ChartItem';
+import { CallOption } from '../CallOption';
 import {
   Container,
   InnerContainer,
@@ -16,7 +17,11 @@ import {
   ButtonWrapper,
   Table,
   Tbody,
-  Divider
+  Divider,
+  BottomContentWrapper,
+  CallWrapper,
+  InfoItem,
+  PutsWrapper
 } from './styles';
 
 interface CardProps {
@@ -29,6 +34,7 @@ export const Card:React.FC<CardProps> = (props: CardProps) => {
 
   const [open, setIsOpen] = useState<boolean>(false);
   const [series, setSeries] = useState<Array<any>>([]);
+  const [isOpenCall, setIsOpenCall] = useState<boolean>(false);
 
   useEffect(() => {
     const _series = []
@@ -41,8 +47,8 @@ export const Card:React.FC<CardProps> = (props: CardProps) => {
   }, [card]);
 
   const checkColor = (percent: number) => {
-    if (percent > 0) return '#5CD25D'
-    else return '#F11818'
+    if (percent > 0) return '#5CD25D';
+    else return '#F11818';
   };
 
   return (
@@ -122,19 +128,56 @@ export const Card:React.FC<CardProps> = (props: CardProps) => {
                   )}
                 </Table>
               </DetailWrapper>
+            </CardInfoWrapper>
+          </Content>
+          <Divider />
+          <BottomContentWrapper>
+            <CallWrapper>
+              <h3>Calls</h3>
+              <InfoItem>
+                <span>APY</span>
+                <span>24%</span>
+              </InfoItem>
+              <InfoItem>
+                <span>TVL</span>
+                <span>24M USD</span>
+              </InfoItem>
+              <InfoItem>
+                <span>Deposits</span>
+                <span>$2500 USD</span>
+              </InfoItem>
+              <Button
+                color='primary'
+                onClick={() => setIsOpenCall(true)}
+              >Calls</Button>
+            </CallWrapper>
+            <PutsWrapper>
+              <h3>Puts</h3>
+              <InfoItem>
+                <span>APY</span>
+                <span>24%</span>
+              </InfoItem>
+              <InfoItem>
+                <span>TVL</span>
+                <span>24M USD</span>
+              </InfoItem>
+              <InfoItem>
+                <span>Deposits</span>
+                <span>$2500 USD</span>
+              </InfoItem>
               <ButtonWrapper>
                 <Button
                   color='primary'
-                  borderRadius='11px'
-                >Invest</Button>
+                  borderRadius='8px'
+                >Puts</Button>
                 <IconButton
-                  borderRadius='12px'
+                  borderRadius='10px'
                 >
                   <Eye />
                 </IconButton>
               </ButtonWrapper>
-            </CardInfoWrapper>
-          </Content>
+            </PutsWrapper>
+          </BottomContentWrapper>
         </InnerContainer>
       </Container>
       <Modal
@@ -144,6 +187,17 @@ export const Card:React.FC<CardProps> = (props: CardProps) => {
       >
         <CardDetail
           card={card}
+        />
+      </Modal>
+      <Modal
+        width='380px'
+        open={isOpenCall}
+        onClose={() => setIsOpenCall(false)}
+        borderRadius='43px'
+      >
+        <CallOption
+          card={card}
+          onClose={() => setIsOpenCall(false)}
         />
       </Modal>
     </>

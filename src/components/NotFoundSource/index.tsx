@@ -1,5 +1,5 @@
-import React from 'react'
-import { Container, InnerContainer, Image } from './styles'
+import React from 'react';
+import { Container, InnerContainer, Image } from './styles';
 
 export const NotFoundSource:React.FC = () => {
   return (

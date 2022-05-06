@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button } from '../../shared'
+import { Button } from '../../../styles'
 import {
   Container,
   Title,
@@ -12,23 +12,23 @@ import {
   Tbody,
   BalanceWrapper,
   ActiveBox
-} from './styles'
+} from './styles';
 
 interface BorrowRepayProps {
   market?: any,
   handleChangeBorrow?: any
-}
+};
 
 export const BorrowRepay:React.FC<BorrowRepayProps> = (props: BorrowRepayProps) => {
-  const { market, handleChangeBorrow } = props
+  const { market, handleChangeBorrow } = props;
 
-  const [max, setMax] = useState<any>(0)
-  const [selectedTab, setSelectedTab] = useState<string>('borrow')
+  const [max, setMax] = useState<any>(0);
+  const [selectedTab, setSelectedTab] = useState<string>('borrow');
 
   const tabList = [
     { key: 'borrow', name: 'Borrow' },
     { key: 'repay', name: 'Repay' }
-  ]
+  ];
 
   return (
     <Container>

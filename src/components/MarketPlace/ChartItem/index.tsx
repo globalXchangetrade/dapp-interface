@@ -1,16 +1,16 @@
-import React from 'react'
-import ReactApexChart from 'react-apexcharts'
+import React from 'react';
+import ReactApexChart from 'react-apexcharts';
 import {
   ChartContainer
-} from './styles'
+} from './styles';
 
 interface ChartItemProps {
   series: any,
   color: string
-}
+};
 
 export const ChartItem:React.FC<ChartItemProps> = (props: ChartItemProps) => {
-  const { color, series } = props
+  const { color, series } = props;
 
   const options: any = {
     chart: {
@@ -94,7 +94,7 @@ export const ChartItem:React.FC<ChartItemProps> = (props: ChartItemProps) => {
     theme: {
       mode: 'dark', 
     }
-  }
+  };
 
   return (
     <ChartContainer>
