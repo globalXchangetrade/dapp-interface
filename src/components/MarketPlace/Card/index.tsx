@@ -144,6 +144,7 @@ export const Card:React.FC<CardProps> = (props: CardProps) => {
       >
         <CardDetail
           card={card}
+          onClose={() => setIsOpen(false)}
         />
       </Modal>
     </>

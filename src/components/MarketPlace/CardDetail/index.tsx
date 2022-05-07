@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Calendar } from '../../shared/SvgIcons';
 import { Select, Button } from '../../../styles';
+import { DetailChart } from '../DetailChart';
+import { CircleProgressBar } from '../CircleProgressBar';
 import {
   Container,
   TitleWrapper,
@@ -20,16 +22,33 @@ import {
   GoldWrapper,
   Option,
   Balance,
-  ChartView
+  ChartView,
+  BottomContentWrapper,
+  FundManager,
+  FundManagerContent,
+  HeaderLogoWrapper,
+  UserInfoWrapper,
+  StatsWrapper,
+  StatsContent,
+  StatsItem,
+  AllowCaution,
+  AllowCautionContent,
+  ProgressBarWrapper,
+  ProgressTextWrapper,
+  AllowCautionInfoWrapper,
+  AllowCautionTable,
+  AllowCautionThead,
+  AllowCautionTbody,
+  AssetInfoWrapper
 } from './styles';
-import { DetailChart } from '../DetailChart';
 
 interface CardDetailProps {
   card: any;
+  onClose?: any;
 };
 
 export const CardDetail:React.FC<CardDetailProps> = (props: CardDetailProps) => {
-  const { card } = props;
+  const { card, onClose } = props;
 
   const [selectedType, setSelectedType] = useState<string>('price');
   const [selectedDate, setSelectedDate] = useState<string>('1');
@@ -66,6 +85,11 @@ export const CardDetail:React.FC<CardDetailProps> = (props: CardDetailProps) => 
     if (percent > 0) return '#5CD25D'
     else return '#F11818'
   };
+
+  const handleBuy = () => {
+    // code here for buy now
+    onClose && onClose()
+  }
 
   return (
     <Container>
@@ -192,10 +216,110 @@ export const CardDetail:React.FC<CardDetailProps> = (props: CardDetailProps) => 
             <Button
               color='primary'
               borderRadius='11px'
+              onClick={handleBuy}
             >Buy now</Button>
           </ButtonWrapper>
         </ControlPanel>
       </ContentWrapper>
+      {card?.assets && (
+        <BottomContentWrapper>
+          <FundManager>
+            <h2>FUND MANAGER</h2>
+            <FundManagerContent>
+              <HeaderLogoWrapper inactive={!card?.logo}>
+                {card?.logo && <img src={card?.logo} alt='' />}
+              </HeaderLogoWrapper>
+              <UserInfoWrapper>
+                <h2>By {card?.user?.name}</h2>
+                <p>{card?.user?.description}</p>
+              </UserInfoWrapper>
+            </FundManagerContent>
+          </FundManager>
+          <StatsWrapper>
+            <h2>STATS</h2>
+            <StatsContent>
+              <StatsItem>
+                <span>Market Cap</span>
+                <span>$88.43M</span>
+              </StatsItem>
+              <StatsItem>
+                <span>Volume</span>
+                <span>$88.43M</span>
+              </StatsItem>
+              <StatsItem>
+                <span>Current Supply</span>
+                <span>3,423</span>
+              </StatsItem>
+              <StatsItem>
+                <span>24h Return</span>
+                <span className='bold'>+34%</span>
+              </StatsItem>
+              <StatsItem>
+                <span>1M Return</span>
+                <span className='bold'>+34%</span>
+              </StatsItem>
+              <StatsItem>
+                <span>3m Return</span>
+                <span className='bold'>+34%</span>
+              </StatsItem>
+              <StatsItem>
+                <span>Total Return</span>
+                <span className='bold'>+34%</span>
+              </StatsItem>
+            </StatsContent>
+          </StatsWrapper>
+          <AllowCaution>
+            <h2>ALLOWCATION</h2>
+            <AllowCautionContent>
+              <ProgressBarWrapper>
+                <ProgressTextWrapper>
+                  <span>60% GOLD</span>
+                  <p>40% TESLA</p>
+                </ProgressTextWrapper>
+                <CircleProgressBar
+                  strokeWidth={10}
+                  sqSize={80}
+                  percentage={40}
+                  activeColor='#e82127'
+                  inactiveColor='#6852EF'
+                />
+              </ProgressBarWrapper>
+              <AllowCautionInfoWrapper>
+                <AllowCautionTable>
+                  <AllowCautionThead>
+                    <tr>
+                      <th>Asets</th>
+                      <th>Quantity per MI</th>
+                      <th>Price</th>
+                      <th>Value</th>
+                      <th>Allowcation</th>
+                      <th>Return (24h)</th>
+                    </tr>
+                  </AllowCautionThead>
+                  {card?.assets.map((item: any, i: any) => (
+                    <AllowCautionTbody key={i}>
+                      <tr>
+                        <td>
+                          <AssetInfoWrapper>
+                            {item?.logo && <img src={item.logo} alt='' />}
+                            <span>{item?.name}</span>
+                          </AssetInfoWrapper>
+                        </td>
+                        <td>{item.quantity}</td>
+                        <td>{item.price} USD</td>
+                        <td>{item.value} USD</td>
+                        <td>{item.allow_caution > 0 && '+'}{item.allow_caution}%</td>
+                        <td className='blue'>{item.allow_caution > 0 && '+'}{item?.return}%</td>
+                      </tr>
+                    </AllowCautionTbody>
+                  ))}
+                </AllowCautionTable>
+              </AllowCautionInfoWrapper>
+            </AllowCautionContent>
+          </AllowCaution>
+        </BottomContentWrapper>  
+      )}
+
     </Container>
   )
 }

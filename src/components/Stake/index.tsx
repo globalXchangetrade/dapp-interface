@@ -22,9 +22,9 @@ export const Stake:React.FC = () => {
     const _positionList = positionList.filter((position: any): any => position.id !== item.id);
     _positionList.push(item);
     setPositionList(_positionList);
-    setOpenModal(false)
-    setSelectedAsset(null)
-  }
+    setOpenModal(false);
+    setSelectedAsset(null);
+  };
 
   return (
     <>
@@ -64,6 +64,7 @@ export const Stake:React.FC = () => {
         borderRadius='43px'
         borderColor='rgba(176, 176, 176, 0.17)'
         onClose={() => setOpenModal(false)}
+        noOverflow
       >
         {selectedAsset ? (
           <StakeForm

@@ -120,6 +120,7 @@ export const SupplyMarket:React.FC<SupplyMarketProps> = (props: SupplyMarketProp
         <BorrowRepay
           handleChangeBorrow={handleChangeBorrow}
           market={selectedItem}
+          onClose={() => setBorrowRepayOpen(false)}
         />
       </Modal>
     </>

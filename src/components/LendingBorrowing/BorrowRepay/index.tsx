@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Button } from '../../../styles'
+import React, { useState } from 'react';
+import { Button } from '../../../styles';
 import {
   Container,
   Title,
@@ -15,12 +15,13 @@ import {
 } from './styles';
 
 interface BorrowRepayProps {
-  market?: any,
-  handleChangeBorrow?: any
+  market?: any;
+  handleChangeBorrow?: any;
+  onClose?: any;
 };
 
 export const BorrowRepay:React.FC<BorrowRepayProps> = (props: BorrowRepayProps) => {
-  const { market, handleChangeBorrow } = props;
+  const { market, handleChangeBorrow, onClose } = props;
 
   const [max, setMax] = useState<any>(0);
   const [selectedTab, setSelectedTab] = useState<string>('borrow');
@@ -29,6 +30,16 @@ export const BorrowRepay:React.FC<BorrowRepayProps> = (props: BorrowRepayProps) 
     { key: 'borrow', name: 'Borrow' },
     { key: 'repay', name: 'Repay' }
   ];
+
+  const onBorrowClick = () => {
+    handleChangeBorrow && handleChangeBorrow(true);
+    onClose && onClose();
+  };
+
+  const onRepayClick = () => {
+    // code here for repay
+    onClose && onClose();
+  }
 
   return (
     <Container>
@@ -88,7 +99,7 @@ export const BorrowRepay:React.FC<BorrowRepayProps> = (props: BorrowRepayProps) 
           </Table>
           <Button
             color='primary'
-            onClick={() => handleChangeBorrow(true)}
+            onClick={onBorrowClick}
           >
             BORROW
           </Button>
@@ -119,6 +130,7 @@ export const BorrowRepay:React.FC<BorrowRepayProps> = (props: BorrowRepayProps) 
           </Table>
           <Button
             color='primary'
+            onClick={onRepayClick}
           >
             REPAY
           </Button>

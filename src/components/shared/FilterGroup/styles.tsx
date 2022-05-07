@@ -54,6 +54,7 @@ export const SelectWrapper = styled.div`
   background: #26272B;
   #select-input {
     background: transparent !important;
+    min-width: 70px;
     #list {
       margin-top: 10px;
       > div {

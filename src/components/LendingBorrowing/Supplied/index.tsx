@@ -11,7 +11,6 @@ import {
 } from './styles';
 
 export const Supplied:React.FC = () => {
-
   const dumy = [
     { photo: '/imgs/gold.png', name: 'Gold', apy: 23, wallet: 300 },
     { photo: '/imgs/gold.png', name: 'Gold', apy: 23, wallet: 300 },

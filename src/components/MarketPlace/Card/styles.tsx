@@ -68,7 +68,6 @@ export const TitleWrapper = styled.div`
 export const Content = styled.div`
   display: flex;
   align-items: center;
-  height: calc(100% - 30px);
   flex-direction: row;
   padding-top: 5px;
 

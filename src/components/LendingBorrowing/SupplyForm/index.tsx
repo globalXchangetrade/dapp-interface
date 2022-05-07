@@ -37,6 +37,11 @@ export const SupplyForm:React.FC<SupplyProps> = (props: SupplyProps) => {
     setIsCollateralModal(true);
   };
 
+  const onClickApprove = () => {
+    handleChangeSupply && handleChangeSupply(true);
+    onClose && onClose();
+  }
+
   return (
     <Container>
       <Title>
@@ -95,7 +100,7 @@ export const SupplyForm:React.FC<SupplyProps> = (props: SupplyProps) => {
           </Table>
           <Button
             color='primary'
-            onClick={() => handleChangeSupply(true)}
+            onClick={onClickApprove}
           >
             APPROVE
           </Button>

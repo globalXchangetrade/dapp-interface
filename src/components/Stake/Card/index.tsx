@@ -11,7 +11,7 @@ import {
 
 interface CardProps {
   position: any;
-}
+};
 
 export const Card:React.FC<CardProps> = (props: CardProps) => {
   const { position } = props;

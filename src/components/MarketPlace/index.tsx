@@ -14,7 +14,8 @@ import { FilterGroup } from '../shared';
 export const MarketPlace:React.FC = () => {
 
   const upcomingList: any = [
-    { logo: '/imgs/mtsubishi.png', title: 'MITSUBISHI', price: '$45', currency: 'USD', time: '7D 12:23:23', supply: 100, country_flag: '/imgs/japan-flag.png', available_percent: 23, data: [{ x: 1996, y: 322 },
+    { logo: '/imgs/mtsubishi.png', title: 'MITSUBISHI', price: '$45', currency: 'USD', time: '7D 12:23:23', supply: 100, country_flag: '/imgs/japan-flag.png', available_percent: 23, data: [
+      { x: 1996, y: 322 },
       { x: 1997, y: 394 },
       { x: 1998, y: 392 },
       { x: 1999, y: 342 },

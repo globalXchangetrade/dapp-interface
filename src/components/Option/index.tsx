@@ -1,6 +1,6 @@
 import React from 'react';
 import { FilterGroup } from '../shared';
-import { Card } from './Card';
+import { Card } from '../Portfolio/Card';
 import {
   Container,
   InnerContainer,
@@ -10,7 +10,7 @@ import {
 
 export const Option:React.FC = () => {
   const cardList: any = [
-    { logo: '/imgs/gold.png', title: 'GOLD', price: '$145', currency: 'USD', tvl: '24M', volume_24: '24M', change: 24, high: '24M', low: '24M', volume_7: '24M', country_flag: '/imgs/uk-flag.png',     data: [{ x: 1996, y: 322 },
+    { logo: '/imgs/gold.png', title: 'GOLD', price: '$145', isCallPut: true, currency: 'USD', tvl: '24M', volume_24: '24M', change: 24, high: '24M', low: '24M', volume_7: '24M', country_flag: '/imgs/uk-flag.png',     data: [{ x: 1996, y: 322 },
       { x: 1997, y: 324 },
       { x: 1998, y: 329 },
       { x: 1999, y: 342 },

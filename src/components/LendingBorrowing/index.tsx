@@ -18,7 +18,7 @@ import {
   ContentWrapper
 } from './styles';
 
-export const LendingBorrowing = () => {
+export const LendingBorrowing:React.FC = () => {
   const [isSupply, setIsSupply] = useState<boolean>(false);
   const [isBorrow, setIsBorrow] = useState<boolean>(false);
 

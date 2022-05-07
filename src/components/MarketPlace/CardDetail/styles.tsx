@@ -55,12 +55,29 @@ export const MenuItem = styled.div<MenuItemProps>`
   text-transform: capitalize;
   padding: 5px 10px;
   cursor: pointer;
-  transition: all 0.2s linear;
-  margin: 0px 5px;
-  background: transparent;
+  margin: 1px 5px;
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    border-radius: 10px;
+    z-index: -1;
+    transform: translateY(2px);
+  }
   
   ${(props: any) => props?.active && css`
-    background: linear-gradient(442.07deg, #223663 -1.47%, #2489E4 98.47%);
+    &::after {
+      transition: transform 0.2s ease-out 0s;
+      background: linear-gradient(442.07deg, #223663 -1.47%, #2489E4 98.47%);
+      transform: translateY(0px);
+    }
   `}
 `
 
@@ -219,3 +236,203 @@ export const Balance = styled.p`
 `
 
 export const ChartView = styled.div``
+
+export const BottomContentWrapper = styled.div`
+  padding: 15px;
+`
+
+export const FundManager = styled.div`
+  margin: 0px;
+
+  > h2 {
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0px;
+    margin-bottom: 15px;
+  }
+`
+
+interface HeaderLogoWrapperProps {
+  readonly inactive?: any
+}
+
+export const HeaderLogoWrapper = styled.div<HeaderLogoWrapperProps>`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-top: 5px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  ${( props: any ) => props.inactive && css`
+    background: #C4C4C4;
+  `}
+`
+
+export const FundManagerContent = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+export const UserInfoWrapper = styled.div`
+  h2 {
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+  p {
+    margin: 0px;
+    font-weight: 300;
+    font-size: 10px;
+    max-width: 400px;
+    width: 100%;
+  }
+`
+
+export const StatsWrapper = styled.div`
+  padding-top: 25px;
+  > h2 {
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0px;
+    margin-bottom: 5px;
+  }
+`
+
+export const StatsContent = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 700px;
+  justify-content: space-around;
+`
+
+export const StatsItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+
+  > span {
+    &:first-child {
+      font-weight: 400;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+    &:last-child {
+      margin-top: 5px;
+      font-weight: 400;
+      font-size: 14px;
+
+      &.bold {
+        color: #6CFF6C
+      }
+    }
+  }
+`
+
+export const AllowCaution = styled.div`
+  padding-top: 25px;
+
+  > h2 {
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0px;
+    margin-bottom: 5px;
+  }
+`
+
+export const AllowCautionContent = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
+export const ProgressBarWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px;
+
+  @media (min-width: 576px) {
+    margin: 0px 10px;
+  }
+`
+
+export const ProgressTextWrapper = styled.div`
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  span {
+    font-weight: 400;
+    font-size: 8px;
+    text-align: center;
+    color: #FDED04;
+  }
+
+  p {
+    font-weight: 800;
+    font-size: 25px;
+    margin: 0px;
+    font-weight: 400;
+    font-size: 8px;
+    text-align: center;
+    color: #E82127;
+  }
+`
+
+export const AllowCautionInfoWrapper = styled.div`
+  width: 100%;
+  max-width: 600px;
+  overflow: auto;
+`
+
+export const AllowCautionTable = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 450px;
+`
+
+export const AllowCautionTbody = styled.tbody`
+  tr {
+    td {
+      font-weight: 400;
+      font-size: 14px;
+      padding: 5px;
+      text-align: center;
+
+      &.blue {
+        color: #6CFF6C;
+      }
+    }
+  }
+`
+
+export const AllowCautionThead = styled.thead`
+  th {
+    font-weight: 400;
+    font-size: 12px;
+    opacity: 0.5;
+    padding: 3px 5px;
+  }
+`
+
+export const AssetInfoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 24px;
+    margin-right: 7px;
+  }
+`

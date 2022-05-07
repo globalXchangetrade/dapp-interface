@@ -18,6 +18,7 @@ interface ModalDialogProps {
   readonly width?: string;
   readonly borderRadius?: string;
   readonly borderColor?: string;
+  readonly noOverflow?: boolean;
 };
 
 export const ModalDialog = styled.div<ModalDialogProps>`
@@ -32,8 +33,9 @@ export const ModalDialog = styled.div<ModalDialogProps>`
   height: ${({ height }) => height || '100%'};;
   max-height: 100vh;
   overflow: auto;
+  overflow: ${({ noOverflow }) => noOverflow ? 'initial' : 'auto'};
   border-width: 1px;
-  border-color: ${({ borderColor }) => borderColor ? borderColor : 'transparent'};;
+  border-color: ${({ borderColor }) => borderColor ? borderColor : 'transparent'};
   box-shadow: 0px 20px 99px rgba(75, 72, 246, 0.26);
 
   @media (min-width: 769px) {

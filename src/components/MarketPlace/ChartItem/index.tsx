@@ -18,9 +18,6 @@ export const ChartItem:React.FC<ChartItemProps> = (props: ChartItemProps) => {
       toolbar: {
         show: false
       },
-      sparkline: {
-        enabled: true
-      },
       background: 'transparent'
     },
     legend: {

@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
-import { Button, IconButton, Select } from '../../styles'
-import { useWindowSize } from '../../hooks/useWindowsSize'
-import { List } from '../shared/SvgIcons'
+import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { Button, IconButton, Select } from '../../styles';
+import { useWindowSize } from '../../hooks/useWindowsSize';
+import { List } from '../shared/SvgIcons';
 
 import {
   Container,
@@ -19,15 +19,15 @@ import {
   MobileMenu,
   OverLay,
   MobileItem
-} from './styles'
+} from './styles';
 
-export const Header = () => {
-  const navigate = useNavigate()
-  const { pathname } = useLocation()
-  const { width } = useWindowSize()
+export const Header:React.FC = () => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const { width } = useWindowSize();
 
-  const [selectedToken, setSelectedToken] = useState('ethereum')
-  const [open, setIsOpen] = useState(false)
+  const [selectedToken, setSelectedToken] = useState('ethereum');
+  const [open, setIsOpen] = useState(false);
 
   const menuList = [
     { path: '/swap', title: 'Swap' },
@@ -37,17 +37,17 @@ export const Header = () => {
     { path: '/option', title: 'Option' },
     { path: '/index', title: 'Index' },
     { path: '/portfolio', title: 'portfolio' }
-  ]
+  ];
 
   const tokenOptions = [
     { value: 'ethereum', content: <Option><img src='/imgs/eth.png' alt='' /><span className='token'>Ethereum</span></Option> },
     { value: 'bitcoin', content: <Option><img src='/imgs/eth.png' alt='' /><span className='token'>Bitcoin</span></Option> }
-  ]
+  ];
 
   const handleGoToPage = (index: string) => {
-    navigate(index)
-    if (open) setIsOpen(false)
-  }
+    navigate(index);
+    if (open) setIsOpen(false);
+  };
 
   return (
     <>

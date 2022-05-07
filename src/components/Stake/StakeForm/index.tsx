@@ -35,7 +35,7 @@ export const StakeForm:React.FC<StakeFormProps> = (props: StakeFormProps) => {
 
   const handleChangePosition = () => {
     handleAddPositionList(position);
-  }
+  };
 
   return (
     <Container>

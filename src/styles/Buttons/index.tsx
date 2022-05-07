@@ -4,6 +4,7 @@ import { darken } from 'polished'
 
 interface IconButtonProps {
   readonly borderRadius?: string;
+  readonly bgTransparent?: boolean;
 };
 
 export const IconButton = styled.button<IconButtonProps>`
@@ -13,7 +14,7 @@ export const IconButton = styled.button<IconButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all .3s linear;
+  transition: all .2s ease-out;
   cursor: pointer;
   border: none;
 
@@ -26,6 +27,12 @@ export const IconButton = styled.button<IconButtonProps>`
     font-size: 17px;
     color: #F3F4FA;
   }
+
+  ${(props: any) => props.bgTransparent && css`
+    background-color: transparent;
+    border-color: transparent;
+    padding: 8px;
+  `}
 
   &:hover {
     background: rgba(247, 247, 247, 0.08);

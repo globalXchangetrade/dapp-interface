@@ -17,7 +17,7 @@ interface CalnedarWrapperProps {
 }
 
 export const CalendarWrapper = styled.div<CalnedarWrapperProps>`
-  background-color: white;
+  background: #1e1f22;
   box-sizing: border-box;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.12);
   border-radius: 7.6px;
@@ -48,5 +48,50 @@ export const CalendarWrapper = styled.div<CalnedarWrapperProps>`
     .rdrDay:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span, .rdrDay:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span, .rdrDay:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span, .rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span {
       color: white;
     }
-  }  
+  }
+
+  .rdrCalendarWrapper {
+    background: #1e1f22;
+
+    .rdrMonthPicker, .rdrYearPicker {
+      select {
+        color: white;
+      }
+    }
+
+    .rdrNextPrevButton {
+      background: rgba(247,247,247,0.11);
+      i {
+        border-color: transparent white transparent transparent;
+      }
+      &.rdrNextButton i {
+          border-color: transparent transparent transparent white;
+      }
+    }
+
+    .rdrDays {
+      .rdrDay {
+        span {
+          color: white !important;
+          &.rdrSelected {
+            color: #6D24E4 !important;
+          }
+        }
+        .rdrDayNumber {
+          span {
+            &::after {
+              background: #6D24E4 !important;
+            }
+          }
+        }
+        &.rdrDayPassive {
+          .rdrDayNumber {
+            span {
+              color: rgb(132, 144, 149) !important;
+            }
+          }
+        }
+      }
+    }
+  }
 `

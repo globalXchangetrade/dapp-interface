@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div``
+export const Container = styled.div``;
 
 export const InnerContainer = styled.div`
   max-width: 1500px;
@@ -13,7 +13,7 @@ export const InnerContainer = styled.div`
   @media (min-width: 768px) {
     padding: 15px 30px;
   }
-`
+`;
 
 export const LogoWrapper = styled.div`
   display: flex;
@@ -31,12 +31,12 @@ export const LogoWrapper = styled.div`
     font-size: 16px;
     line-height: 24px;
   }
-`
+`;
 
 export const MenuButtonWrapper = styled.div`
   display: flex;
   align-items: center;
-`
+`;
 
 export const MenuListWrapper = styled.div`
   display: flex;
@@ -48,13 +48,12 @@ export const MenuListWrapper = styled.div`
   @media (min-width: 1024px) {
     padding: 4px 17px;
   }
-`
+`;
 
 export const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
-`
-
+`;
 interface MenuItemProps {
   readonly active: boolean;
 };
@@ -67,12 +66,30 @@ export const MenuItem = styled.div<MenuItemProps>`
   text-transform: capitalize;
   padding: 5px 8px;
   cursor: pointer;
-  transition: all 0.2s linear;
+  transition: 0.15s ease-in;
   margin: 0px 7px;
-  background: transparent;
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    border-radius: 10px;
+    z-index: -1;
+    transform: translateY(2px);
+  }
   
   ${(props: any) => props?.active && css`
-    background: linear-gradient(440.31deg, #2B2263 7.82%, #6D24E4 91.92%);
+    &::after {
+      transition: transform 0.2s ease-out 0s;
+      background: linear-gradient(440.31deg, #2B2263 7.82%, #6D24E4 91.92%);
+      transform: translateY(0px);
+    }
   `}
 
   @media (min-width: 1024px) {
@@ -82,7 +99,7 @@ export const MenuItem = styled.div<MenuItemProps>`
   @media (min-width: 1100px) {
     padding: 7px 12px;
   }
-`
+`;
 
 export const ChainListWrapper = styled.div`
   margin: 15px 0px;
@@ -101,7 +118,7 @@ export const ChainListWrapper = styled.div`
   @media (min-width: 1200px) {
     margin: 0px 30px;
   }
-`
+`;
 
 export const Option = styled.div`
   display: flex;
@@ -121,7 +138,7 @@ export const Option = styled.div`
     height: 23px;
     border-radius: 50%;
   }
-`
+`;
 
 export const WalletButtonWrapper = styled.div`
   display: flex;
@@ -130,7 +147,7 @@ export const WalletButtonWrapper = styled.div`
   > button {
     height: 38px;
   }
-`
+`;
 
 export const MenuListIconWrapper = styled.div`
   button {
@@ -148,7 +165,7 @@ export const MenuListIconWrapper = styled.div`
   @media (min-width: 450px) {
     margin: 0px 5px;
   }
-`
+`;
 
 export const OverLay = styled.div`
   position: fixed;
@@ -160,7 +177,7 @@ export const OverLay = styled.div`
   transition: opacity 0.3s ease 0s;
   top: 0px;
   left: 0px;
-`
+`;
 
 export const MobileMenu = styled.div`
   & > div {

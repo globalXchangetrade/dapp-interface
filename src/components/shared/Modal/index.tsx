@@ -9,7 +9,7 @@ import {
   ModalBackHeader
 } from './styles'
 
-const ModalUI = (props: any) => {
+const ModalUI:React.FC = (props: any) => {
   const {
     open,
     title,
@@ -48,6 +48,7 @@ const ModalUI = (props: any) => {
       isTransparent={isTransparent}
       borderRadius={props.borderRadius}
       borderColor={props.borderColor}
+      noOverflow={props.noOverflow}
     >
       {isProductForm && (
         <ModalBackHeader />
